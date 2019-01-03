@@ -4,11 +4,14 @@ import VueRouter from 'vue-router'
 // Pages
 import AboutUs from '@/pages/about-us/about-us'
 import Braces from '@/pages/braces/braces'
+import Contact from '@/pages/contact/contact'
+import GetStarted from '@/pages/get-started/get-started'
 import Home from '@/pages/home/home'
+import Invisalign from '@/pages/invisalign/invisalign'
+import Treatments from '@/pages/treatments/treatments'
 
 // Resources
 import Styleguide from '@/pages/styleguide/styleguide'
-// import PageNotFound from '@/pages/404/404'
 import scrollBehavior from '@/shared/functionality/scroll-behavior'
 
 Vue.use(VueRouter)
@@ -29,10 +32,34 @@ const router = new VueRouter({
       component: AboutUs
     },
     {
+      path: '/get-started',
+      name: 'Get Started',
+      navigation: true,
+      component: GetStarted
+    },
+    {
+      path: '/invisalign',
+      name: 'Invisalign',
+      navigation: true,
+      component: Invisalign
+    },
+    {
       path: '/braces',
       name: 'Braces',
       navigation: true,
       component: Braces
+    },
+    {
+      path: '/treatments',
+      name: 'Treatments',
+      navigation: true,
+      component: Treatments
+    },
+    {
+      path: '/contact',
+      name: 'Contact',
+      navigation: true,
+      component: Contact
     },
     {
       path: '/styleguide',
