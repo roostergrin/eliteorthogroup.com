@@ -19,9 +19,9 @@
   display: block
   position: relative
   margin: 0 auto
-  padding: 0 calc(#{$gutter} / 2)
+  padding: 0 calc((#{$outside-gutter} - #{$gutter}) / 2)
   width: 100%
-  max-width: calc(#{$width} + #{$gutter})
+  max-width: calc(#{$width} + #{$outside-gutter})
   box-sizing: border-box
 
   &--flex
@@ -31,6 +31,8 @@
       &:before,
       &:after
         display: none
+      @media screen and (max-width: $screen-sm)
+        display: block
 
   &--grid
     @extend .container
@@ -45,6 +47,9 @@
         display: none
       @media screen and (max-width: $screen-sm)
         grid-column-gap: 0
+
+  @media screen and (max-width: $screen-xs)
+    padding: 0 calc(((#{$outside-gutter} / 2) - #{$gutter}) / 2)
 
 // --------------------------------------------------------
 // NOTE: allows for a container that's larger than the standard for the website

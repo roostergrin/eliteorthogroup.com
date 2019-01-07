@@ -10,10 +10,10 @@ $half: calc($columns/2)
     padding: 0 calc(#{$gutter}/2)
     width: calc(#{$i} / #{$columns} * 100%)
 
-    .container-large &
-      float: left
-      margin: 0 calc(#{$gutter} / 2)
-      width: calc(#{$i} / #{$columns-large} * 100% - #{$gutter})
+    // .container-large &
+    //   float: left
+    //   margin: 0 calc(#{$gutter} / 2)
+    //   width: calc(#{$i} / #{$columns-large} * 100% - #{$gutter})
 
     @media screen and (max-width: $screen-md)
       width: 100%
@@ -29,7 +29,7 @@ $half: calc($columns/2)
         width: 100%
 
     &--flex
-      display: inline-block
+      // display: flex
       flex: 0 0 auto
       flex-basis: calc((#{$i}/#{$columns}) * 100%)
       flex-grow: 0
@@ -59,26 +59,25 @@ $half: calc($columns/2)
       @media screen and (max-width: $screen-sm)
         margin-left: 0
 
-    &--grid
-        float: left
-        margin: 0 calc(#{$gutter} / 2)
-        width: calc(#{$i} / #{$columns} * 100% - #{$gutter})
-
-        @supports (display: grid)
-          margin: 0
-          width: auto
-          grid-column-end: span #{$i}
-
-        .container-large &
-          float: left
-          margin: 0 calc(#{$gutter} / 2)
-          width: calc(#{$i} / #{$columns-large} * 100% - #{$gutter})
-
-          @supports (display: grid)
-            margin: 0
-            width: auto
-            grid-column-end: span #{$i}
-
+    // &--grid
+    //   float: left
+    //   margin: 0 calc(#{$gutter} / 2)
+    //   width: calc(#{$i} / #{$columns} * 100% - #{$gutter})
+    //
+    //   @supports (display: grid)
+    //     margin: 0
+    //     width: auto
+    //     grid-column-end: span #{$i}
+    //
+    //   .container-large &
+    //     float: left
+    //     margin: 0 calc(#{$gutter} / 2)
+    //     width: calc(#{$i} / #{$columns-large} * 100% - #{$gutter})
+    //
+    //     @supports (display: grid)
+    //       margin: 0
+    //       width: auto
+    //       grid-column-end: span #{$i}
 
 // --------------------------------------------------------
 // grid classes
