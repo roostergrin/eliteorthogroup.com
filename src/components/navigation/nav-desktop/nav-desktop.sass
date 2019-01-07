@@ -1,3 +1,75 @@
 .nav-desktop
-  &__link
-    margin: auto rem-calc(6)
+  padding: 1rem 0
+
+  &__container
+    @extend .container--flex
+    justify-content: flex-end
+
+  &__nav-primary
+    display: flex
+    align-items: center
+
+  &__location,
+  &__phone-wrapper
+    position: relative
+    margin-right: rem-calc(12)
+
+  &__phone-wrapper
+    &:hover
+      .nav-desktop__phone-dropdown
+        display: block
+        animation: dropdown-fade-in-down .3s cubic-bezier(.39, .575, .28, .995) forwards
+
+  &__location-icon,
+  &__phone-icon
+    border-radius: 50%
+    background: $teal
+    padding: 5px
+    width: 30px
+    height: 30px
+    fill: $white
+
+  &__hamburger
+    cursor: pointer
+    line-height: 1.15
+    color: $green-grey
+    font-size: 18px
+    font-weight: 700
+
+    span
+      display: block
+      margin: 3px auto
+      border-radius: 4.5px
+      background: $green-grey
+      width: 40px
+      height: 5px
+
+  &__phone-dropdown
+    display: none
+    position: absolute
+    top: 3rem
+    left: 50%
+    opacity: 0
+    border-radius: 26px
+    box-shadow: $shadow-button
+    background: $teal
+    padding: .5rem
+    width: 200px
+
+    &:after
+      position: absolute
+      top: -4px
+      left: -4px
+      border: 2px solid $teal
+      border-radius: 28px
+      width: 102.5%
+      height: 112.5%
+      content: ''
+
+  &__phone
+    display: flex
+    justify-content: center
+    color: $white
+
+    &-location
+      margin-right: rem-calc(10)

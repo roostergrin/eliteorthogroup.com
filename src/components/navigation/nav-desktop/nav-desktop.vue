@@ -5,6 +5,9 @@ export default {
   computed: {
     links () {
       return this.$router.options.routes
+    },
+    props () {
+      return this.$store.state.app.nav
     }
   },
   methods: {
