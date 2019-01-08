@@ -5,6 +5,9 @@
     @extend .container--flex
     justify-content: flex-end
 
+    @media screen and (max-width: 1230px)
+      padding: 0 3rem
+
   &__nav-primary
     display: flex
     align-items: center
@@ -16,9 +19,23 @@
 
   &__phone-wrapper
     &:hover
+      filter: drop-shadow(0 0 12px rgba($teal, .5))
       .nav-desktop__phone-dropdown
         display: block
-        animation: dropdown-fade-in-down .3s cubic-bezier(.39, .575, .28, .995) forwards
+      .nav-desktop__phone
+        animation: dropdown-fade-in-down .35s cubic-bezier(.39, .575, .28, .995) forwards
+
+        @for $i from 1 through 2
+          &:nth-child(#{$i})
+            animation-delay: (($i - 1) * .125s)
+
+    &:after
+      position: absolute
+      bottom: -1rem
+      left: 0
+      padding-bottom: 1rem
+      width: 100%
+      content: ''
 
   &__location-icon,
   &__phone-icon
@@ -29,6 +46,52 @@
     height: 30px
     fill: $white
 
+  &__phone-dropdown
+    display: none
+    position: absolute
+    top: 3rem
+    left: 50%
+    transform: translate(-50%, 0)
+    // opacity: 0
+
+  &__phone
+    display: flex
+    position: relative
+    justify-content: center
+    transform: translate(-50%, 0)
+    transition: all .2s ease
+    opacity: 0
+    z-index: 2
+    margin-bottom: 1rem
+    border-radius: 26px
+    box-shadow: $shadow-button
+    background: $teal
+    padding: .5rem
+    width: 200px
+    color: $white
+
+    &-location
+      margin-right: rem-calc(10)
+
+    &:after
+      position: absolute
+      top: -4px
+      left: -4px
+      transition: all .2 ease
+      border: 2px solid $teal
+      border-radius: 26px
+      width: 102.5%
+      height: 113.5%
+      content: ''
+
+    &:hover
+      box-shadow: none
+      background: $blue-green
+
+      &:after
+        opacity: 0
+        border-color: $blue-green
+
   &__hamburger
     cursor: pointer
     line-height: 1.15
@@ -38,38 +101,13 @@
 
     span
       display: block
+      transition: width .25s cubic-bezier(.52, .01, .16, 1)
       margin: 3px auto
       border-radius: 4.5px
       background: $green-grey
       width: 40px
       height: 5px
 
-  &__phone-dropdown
-    display: none
-    position: absolute
-    top: 3rem
-    left: 50%
-    opacity: 0
-    border-radius: 26px
-    box-shadow: $shadow-button
-    background: $teal
-    padding: .5rem
-    width: 200px
-
-    &:after
-      position: absolute
-      top: -4px
-      left: -4px
-      border: 2px solid $teal
-      border-radius: 28px
-      width: 102.5%
-      height: 112.5%
-      content: ''
-
-  &__phone
-    display: flex
-    justify-content: center
-    color: $white
-
-    &-location
-      margin-right: rem-calc(10)
+    &:hover
+      span
+        width: 48px
