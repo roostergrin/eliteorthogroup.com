@@ -1,15 +1,17 @@
 .nav-desktop(v-if='props')
   .nav-desktop__container
     .nav-desktop__nav-primary
-      .nav-desktop__location
-        Icon.nav-desktop__location-icon(name='location')
+      .nav-desktop__item
+        Icon.nav-desktop__icon(name='location')
+        .nav-desktop__dropdown
+          a.nav-desktop__link(v-for='location, j in props.acf.location', :key='j', :href='location.link' target='_blank' v-html='location.city')
           
-      .nav-desktop__phone-wrapper
-        Icon.nav-desktop__phone-icon(name='phone')
-        .nav-desktop__phone-dropdown
-          a.nav-desktop__phone(v-for='phone, i in props.acf.phone', :key='i', :href="'tel:1-'+ phone.number")
-            .nav-desktop__phone-location(v-html='phone.city')
-            .nav-desktop__phone-number(v-html='phone.number')
+      .nav-desktop__item
+        Icon.nav-desktop__icon(name='phone')
+        .nav-desktop__dropdown
+          a.nav-desktop__link(v-for='phone, i in props.acf.phone', :key='i', :href="'tel:1-'+ phone.number")
+            .nav-desktop__link--location(v-html='phone.city')
+            .nav-desktop__link--number(v-html='phone.number')
             
       .nav-desktop__hamburger(@click='toggleMenu')
         | menu

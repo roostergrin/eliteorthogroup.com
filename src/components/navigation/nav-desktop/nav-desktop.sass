@@ -12,17 +12,17 @@
     display: flex
     align-items: center
 
-  &__location,
-  &__phone-wrapper
+  &__item
     position: relative
     margin-right: rem-calc(12)
 
-  &__phone-wrapper
     &:hover
       filter: drop-shadow(0 0 12px rgba($teal, .5))
-      .nav-desktop__phone-dropdown
+
+      .nav-desktop__dropdown
         display: block
-      .nav-desktop__phone
+
+      .nav-desktop__link
         animation: dropdown-fade-in-down .35s cubic-bezier(.39, .575, .28, .995) forwards
 
         @for $i from 1 through 2
@@ -37,8 +37,7 @@
       width: 100%
       content: ''
 
-  &__location-icon,
-  &__phone-icon
+  &__icon
     border-radius: 50%
     background: $teal
     padding: 5px
@@ -46,7 +45,7 @@
     height: 30px
     fill: $white
 
-  &__phone-dropdown
+  &__dropdown
     display: none
     position: absolute
     top: 3rem
@@ -54,7 +53,7 @@
     transform: translate(-50%, 0)
     // opacity: 0
 
-  &__phone
+  &__link
     display: flex
     position: relative
     justify-content: center
@@ -70,7 +69,7 @@
     width: 200px
     color: $white
 
-    &-location
+    &--location
       margin-right: rem-calc(10)
 
     &:after

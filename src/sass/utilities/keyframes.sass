@@ -1,11 +1,11 @@
 // --- basic fades/slides
-@mixin fades($translate-y-from, $translate-x-from, $translate-y-to, $translate-x-to, $animation)
+@mixin fades($animation, $translate-x-from, $translate-y-from, $translate-x-to, $translate-y-to)
   @keyframes #{$animation}
     from
-      transform: translate($translate-y-from, $translate-x-from)
+      transform: translate($translate-x-from, $translate-y-from)
       opacity: 0
     100%
-      transform: translate($translate-y-to, $translate-x-to)
+      transform: translate($translate-x-to, $translate-y-to)
       opacity: 1
 
 @keyframes dropdown-fade-in-down
@@ -19,7 +19,6 @@
 // --- Bounce Effects
 
 @keyframes funFaded
-  // summers ortho patient after photos
   0%
     transform: translateY(12%) scale(.75)
     opacity: 0
