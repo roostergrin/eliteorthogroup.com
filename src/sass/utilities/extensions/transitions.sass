@@ -5,28 +5,23 @@
 .fade
   &-enter-active,
   &-leave-active
-    transition: opacity .35s ease-in-out
+    transition: opacity .25s ease-in-out
 
   &-enter,
   &-leave-to
     opacity: 0
 
-
 .crossfade
   backface-visibility: hidden
 
   &-enter-active
-    transition-property: opacity
-    transition-duration: .55s
-    transition-timing-function: ease-in-out
+    transition: opacity .25s ease-in-out
 
   &-leave-active
-    transition-delay: .1s
-    transition-property: opacity
-    transition-duration: .45s
+    transition: opacity .15s ease-in-out .1s
 
   &-enter,
-  &-leave-active
+  &-leave-to
     opacity: 0
 
 // -------------------------------------
