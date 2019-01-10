@@ -1,6 +1,8 @@
 <template lang="pug" src="./navigation.pug"></template>
 
 <script>
+import { closeMenu } from 'resources/mixins'
+
 export default {
   computed: {
     links () {
@@ -10,13 +12,15 @@ export default {
       return this.$store.state.app.nav
     }
   },
+  mixins: [closeMenu],
   methods: {
     toggleMenu () {
       this.$store.state.menu ? this.$store.dispatch('VIEW_MENU', false) : this.$store.dispatch('VIEW_MENU', true)
+      this.$store.state.menu ? document.body.classList.add('body-stop') : document.body.classList.remove('body-stop')
     },
-    closeMenu () {
-      this.$store.dispatch('VIEW_MENU', false)
-    },
+    // closeMenu () {
+    //   this.$store.dispatch('VIEW_MENU', false)
+    // },
     handleClick (i) {
       if (i === 'loc') {
         this.$refs.phone.classList.remove('nav-desktop__item--active')

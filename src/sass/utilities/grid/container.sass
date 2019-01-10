@@ -15,10 +15,13 @@
 // --------------------------------------------------------
 
 .container
-  @extend .clearfix
+  @include desktop-lg
+    max-width: $width-large
+  @include tablet
+    flex-direction: column
   @include phone
     padding: 0 calc(#{$outside-gutter} / 4)
-  display: block
+  display: flex
   position: relative
   margin: 0 auto
   padding: 0 calc(#{$outside-gutter} / 2)
@@ -26,29 +29,23 @@
   max-width: calc(#{$width} + #{$outside-gutter})
   box-sizing: border-box
 
-  &--flex
-    @extend .container
-    @include tablet
-      display: block
-    @supports (display: flex)
-      display: flex
-      &:before,
-      &:after
-        display: none
+  &--block
+    @extend .clearfix
+    display: block
 
-  &--grid
-    @extend .container
-    @supports (display: grid)
-      display: grid
-      max-width: $width
-      grid-template-columns: repeat($columns, [col-start] 1fr)
-      grid-column-gap: $gutter
-      grid-row-gap: 0
-      &:before,
-      &:after
-        display: none
-      @media screen and (max-width: $screen-sm)
-        grid-column-gap: 0
+  // &--grid
+  //   @extend .container
+  //   @supports (display: grid)
+  //     display: grid
+  //     max-width: $width
+  //     grid-template-columns: repeat($columns, [col-start] 1fr)
+  //     grid-column-gap: $gutter
+  //     grid-row-gap: 0
+  //     &:before,
+  //     &:after
+  //       display: none
+  //     @media screen and (max-width: $screen-sm)
+  //       grid-column-gap: 0
 
 // --------------------------------------------------------
 // NOTE: allows for a container that's larger than the standard for the website

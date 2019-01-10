@@ -1,15 +1,22 @@
 .navigation
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 9999
   padding: 1rem 0
+  width: 100%
 
   &__container
-    @extend .container--flex
+    @extend .container
+    @include tablet
+      flex-direction: row
     justify-content: space-between
 
   &__logo
     @include tablet
       width: rem-calc(92)
       height: rem-calc(75)
-    transition: width .2s ease, height .2s ease, opacity .2s ease-in-out
+    transition: width .2s ease-in-out, height .2s ease-in-out, opacity .2s ease-in-out
     width: rem-calc(160)
     height: rem-calc(129)
 
@@ -43,6 +50,13 @@
       visibility: hidden
       opacity: 0
       pointer-events: none
+
+    &--menu
+      @include tablet
+        width: rem-calc(92)
+        height: rem-calc(75)
+      width: rem-calc(104)
+      height: rem-calc(85)
 
   &__nav-primary
     @include tablet
