@@ -1,0 +1,212 @@
+.navigation
+  padding: 1rem 0
+
+  &__container
+    @extend .container--flex
+    justify-content: space-between
+
+  &__logo
+    @include tablet
+      width: rem-calc(92)
+      height: rem-calc(75)
+    transition: width .2s ease, height .2s ease, opacity .2s ease-in-out
+    width: rem-calc(160)
+    height: rem-calc(129)
+
+    &-icon
+      width: 100%
+      height: 100%
+
+      .teal
+        transition: fill .2s ease
+        fill: $teal
+
+      .dark-grey
+        transition: fill .2s ease
+        fill: $logo-grey
+
+      .grey
+        transition: fill .2s ease
+        fill: $logo-grey-2
+
+      &--white
+        .teal
+          fill: $white
+
+        .dark-grey
+          fill: $white
+
+        .grey
+          fill: $white
+
+    &--hide
+      visibility: hidden
+      opacity: 0
+      pointer-events: none
+
+  &__nav-primary
+    @include tablet
+      float: right
+      margin: auto 0
+    display: flex
+    align-items: center
+    align-self: flex-start
+
+  &__item
+    position: relative
+    transition: opacity .2s ease
+    margin-right: rem-calc(12)
+
+    @media (hover: hover)
+      &:hover
+        filter: drop-shadow(0 0 12px rgba($teal, .5))
+
+        .navigation__dropdown
+          display: block
+
+        .navigation__link
+          animation: dropdown-fade-in-down .35s cubic-bezier(.39, .575, .28, .995) forwards
+
+          @for $i from 1 through 2
+            &:nth-child(#{$i})
+              animation-delay: (($i - 1) * .125s)
+
+    &:after
+      position: absolute
+      bottom: -1rem
+      left: 0
+      padding-bottom: 1rem
+      width: 100%
+      content: ''
+
+    &--mobile-hide
+      @include phone
+        visibility: hidden
+        opacity: 0
+        pointer-events: none
+
+  &__icon
+    border-radius: 50%
+    background: $teal
+    padding: 5px
+    width: 30px
+    height: 30px
+    fill: $white
+
+  &__dropdown
+    display: none
+    position: absolute
+    top: 3rem
+    left: 50%
+    transform: translate(-50%, 0)
+
+    .navigation__item--active &
+      display: block
+
+    &--location
+      left: calc(#{50%} + 6px)
+
+  &__link
+    display: flex
+    position: relative
+    justify-content: center
+    transform: translate(-50%, 0)
+    transition: all .2s ease
+    opacity: 0
+    z-index: 2
+    margin-bottom: 1rem
+    border-radius: 26px
+    box-shadow: $shadow-button
+    background: $teal
+    padding: .5rem
+    width: 200px
+    color: $white
+
+    &--location
+      margin-right: rem-calc(10)
+
+    .navigation__item--active &
+      animation: dropdown-fade-in-down .35s cubic-bezier(.39, .575, .28, .995) forwards
+
+      @for $i from 1 through 2
+        &:nth-child(#{$i})
+          animation-delay: (($i - 1) * .125s)
+
+    &:after
+      position: absolute
+      top: -4px
+      left: -4px
+      transition: all .2 ease
+      border: 2px solid $teal
+      border-radius: 26px
+      width: 102.5%
+      height: 113.5%
+      content: ''
+
+    &:hover
+      box-shadow: none
+      background: $blue-green
+
+      &:after
+        opacity: 0
+        border-color: $blue-green
+
+  &__hamburger
+    position: relative
+    margin-left: 2rem
+    cursor: pointer
+    width: 48px
+    height: 40px
+    line-height: 1.15
+    color: $green-grey
+    font-size: 18px
+    font-weight: 700
+
+    span
+      display: block
+      position: absolute
+      transform: translate(-50%, -50%)
+      transition: all .2s cubic-bezier(.52, .01, .16, 1) .05s
+      margin: 3px auto
+      border-radius: 4.5px
+      background: $green-grey
+      width: 40px
+      height: 5px
+
+      &:nth-child(2)
+        top: 56%
+        left: 50%
+
+      &:last-child
+        top: 78%
+        left: 50%
+
+    &--active
+      span
+        &:nth-child(2)
+          top: 40%
+          left: 35%
+          transform: rotate(-45deg) translateZ(0)
+          width: 30px
+
+
+        &:last-child
+          top: 40%
+          left: 35%
+          transform: rotate(45deg) translateZ(0)
+          width: 30px
+
+    &--white
+      color: $white
+      span
+        background: $white
+
+    &-menu
+      position: absolute
+      top: 0
+
+    &-exit
+      position: absolute
+      top: 50%
+      left: -40%
+      transform: translate(0, -50%)
