@@ -1,0 +1,17 @@
+.menu-mobile
+  .menu-mobile__container
+    .menu-mobile__links
+      router-link.menu-mobile__link(v-for='link, i in links', :to='link.path' v-if='link.navigation', :key='i' v-on:click.native='closeMenu' v-html='link.name')
+      router-link.menu-mobile__appt-btn(to='/contact') Schedule Consult
+    .menu-mobile__lower
+      .menu-mobile__social
+        a.menu-mobile__social-link(v-for='media, j in props.acf.social_links', :key='j', :href='media.href' target='_blank')
+          Icon.menu-mobile__social-icon(:name='media.icon')
+      .menu-mobile__contact-container
+        .menu-mobile__item(v-for='location, k in props.acf.location', :key='k')
+          a.menu-mobile__contact(:href='location.link' target='_blank')
+            Icon.menu-mobile__contact-icon(name='location')
+            .menu-mobile__label(v-html='location.address')
+          a.menu-mobile__contact(:href='location.phone_href')
+            Icon.menu-mobile__contact-icon(name='phone')
+            .menu-mobile__label {{location.phone}}          

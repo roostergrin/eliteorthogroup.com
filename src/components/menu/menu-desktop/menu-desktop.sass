@@ -8,6 +8,10 @@
   width: 100vw
   height: 100vh
 
+  @media screen and (max-height: 640px)
+    padding-top: rem-calc(110)
+    overflow: scroll
+
   &__container
     @extend .container
     transform: translateY(10%)

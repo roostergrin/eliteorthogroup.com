@@ -2,7 +2,7 @@
 
 <script>
 import Desktop from 'components/menu/menu-desktop/menu-desktop'
-// import Mobile from 'components/menu/menu-mobile/menu-mobile'
+import Mobile from 'components/menu/menu-mobile/menu-mobile'
 
 export default {
   computed: {
@@ -11,9 +11,8 @@ export default {
     }
   },
   components: {
-    Desktop
-    // ,
-    // Mobile
+    Desktop,
+    Mobile
   }
 }
 </script>
