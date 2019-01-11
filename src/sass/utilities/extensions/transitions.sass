@@ -24,6 +24,25 @@
   &-leave-to
     opacity: 0
 
+.fade-in-up
+  backface-visibility: hidden
+
+  &-enter-active
+    transition: all .4s cubic-bezier(.39, .575, .28, .995) .2s
+
+  &-leave-active
+    transition: all .4s cubic-bezier(.39, .575, .28, .995)
+
+  &-enter,
+  &-leave-to
+    opacity: 0
+
+  &-enter
+    transform: translateY(10%)
+
+  &-leave-to
+    transform: translateY(-10%)
+
 // -------------------------------------
 // Slides
 // -------------------------------------

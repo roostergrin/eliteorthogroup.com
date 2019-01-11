@@ -10,13 +10,21 @@
 
   &__container
     @extend .container
+    transform: translateY(10%)
+
+    @media screen and (max-height: 640px)
+      transform: translateY(0)
 
   &__col
 
     &--left
-      @extend .col-7
+      @extend .col-6
+      @extend .col-1--offset
+      @include desktop-lg
+        height: 480px
       position: relative
       padding-left: 3rem
+      height: 424px
 
       @media screen and (max-width: 990px)
         padding-left: 0
@@ -30,10 +38,15 @@
 
   &__sidebar
     @extend .col-1
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    justify-content: center
 
   &__link
     display: flex
     align-items: center
+    cursor: pointer
     line-height: 1.15
     font-family: $roboto
 
@@ -43,27 +56,57 @@
       font-size: 14px
 
     &-name
+      @include desktop-lg
+        font-size: 24px
       align-self: flex-end
+      transition: color .2s ease
       margin: rem-calc(12) rem-calc(8)
       color: $green-grey
       font-size: 20px
       font-weight: 300
 
-    &--hover,
     &--active
       .menu-desktop__link-number,
       .menu-desktop__link-name
         font-weight: bold
 
+    &--hover
+      .menu-desktop__link-name
+        color: $teal
+        font-weight: 300
+
   &__image-container
-    position: relative
+    position: absolute
+    top: 0
+    left: 0
     width: 100%
     height: 100%
     overflow: hidden
 
   &__image
+    position: absolute
+    top: 0
+    left: 0
     width: 100%
     height: 100%
+    @supports (object-fit: cover)
+      object-fit: cover
 
-    @media screen and (max-width: 880px)
-      height: auto
+  &__social-link
+    @include desktop-lg
+      margin: rem-calc(8) 0
+      padding: rem-calc(14)
+      width: rem-calc(52)
+      height: rem-calc(52)
+    transition: border-color .2s ease, fill .2s ease
+    margin: rem-calc(3) 0
+    border: 1px solid $green-grey
+    border-radius: 50%
+    padding: rem-calc(10)
+    width: rem-calc(42)
+    height: rem-calc(42)
+    fill: $green-grey
+
+    &:hover
+      border-color: $teal
+      fill: $teal

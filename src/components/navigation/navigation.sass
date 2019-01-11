@@ -70,10 +70,11 @@
     position: relative
     transition: opacity .2s ease
     margin-right: rem-calc(12)
+    cursor: pointer
 
     @media (hover: hover)
       &:hover
-        filter: drop-shadow(0 0 12px rgba($teal, .5))
+        filter: drop-shadow(0 0 12px rgba($teal, .25))
 
         .navigation__dropdown
           display: block
@@ -167,6 +168,7 @@
 
   &__hamburger
     position: relative
+    transition: color .25s ease
     margin-left: 2rem
     cursor: pointer
     width: 48px
@@ -196,7 +198,9 @@
         left: 50%
 
     &--active
+      color: $teal
       span
+        background: $teal
         &:nth-child(2)
           top: 40%
           left: 35%
@@ -224,3 +228,8 @@
       top: 50%
       left: -40%
       transform: translate(0, -50%)
+
+    // &:hover
+    //   color: $teal
+    //   span
+    //     background: $teal

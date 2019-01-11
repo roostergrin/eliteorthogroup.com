@@ -8,7 +8,7 @@ $half: calc($columns/2)
     @include tablet
       flex-basis: 100%
       width: 100%
-    position: relative  
+    position: relative
     flex: 0 0 auto
     flex-basis: calc((#{$i}/#{$columns}) * 100%)
     flex-grow: 0
@@ -17,7 +17,7 @@ $half: calc($columns/2)
     box-sizing: border-box
 
     @if $i <= $columns / 2
-      @media screen and (max-width: $screen-md)
+      @media screen and (max-width: $screen-sm)
         flex-basis: calc((1/2) * 100%)
 
       @media screen and (max-width: $screen-sm)
