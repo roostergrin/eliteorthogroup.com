@@ -1,0 +1,93 @@
+.hero-home
+  @include ipad-pro
+    height: 80vh
+  @include tablet
+    height: 80vh
+  position: relative
+  width: 100vw
+  height: 100vh
+
+  &__container
+    @include ipad-pro
+      top: 50%
+    @include tablet
+      top: 60%
+      left: 50%
+      min-width: 168px
+    display: flex
+    position: absolute
+    top: 40%
+    left: 25%
+    flex-direction: column
+    transform: translate(-50%, -50%)
+
+  &__bg,
+  &__overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+  &__bg
+    z-index: -1
+
+  &__image
+    @extend .img-norm
+
+    &:first-child
+      @include ipad-pro
+        background-position: 65%
+      @include tablet
+        background-position: 78%
+      @include phone
+        background-position: 71%
+
+    &:last-child
+      @media screen and (max-width: 1290px)
+        background-position: 83%
+
+      @media screen and (max-width: 880px)
+        background-position: 85%
+
+      @media screen and (max-width: #{$screen-xs})
+        background-position: 81%
+
+  &__title
+    @extend .hero
+    @include ipad-pro
+      color: $white
+    @include tablet
+      color: $white
+    @include phone
+      max-width: 155px
+      text-align: center
+    margin-bottom: 1.5rem
+
+    span
+      display: inline-block
+      position: relative
+      animation: text-animation .65s cubic-bezier(.39, .575, .28, .995) forwards
+      opacity: 0
+      min-width: 10px
+      min-height: 10px
+
+  &__logo
+    @include tablet
+      display: none
+    margin-bottom: 3rem
+    width: rem-calc(180)
+    height: rem-calc(146)
+
+    &-icon
+      @extend .logo
+      // @include ipad-pro
+      //   .dark-grey
+      //     fill: $white
+      //   .grey
+      //     fill: $white
+
+  &__appt-btn
+    @extend .button--main
+    margin: 0 auto
+    max-width: 186px

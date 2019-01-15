@@ -11,7 +11,7 @@
   &-leave-to
     opacity: 0
 
-.crossfade
+.nav-crossfade
   backface-visibility: hidden
 
   &-enter-active
@@ -19,6 +19,20 @@
 
   &-leave-active
     transition: opacity .15s ease-in-out .1s
+
+  &-enter,
+  &-leave-to
+    opacity: 0
+
+.hero-crossfade
+  backface-visibility: hidden
+
+  &-enter-active
+    transition: opacity .7s ease-in-out
+
+  &-leave-active
+    transition: opacity .5s ease-in-out .1s
+    z-index: -1
 
   &-enter,
   &-leave-to

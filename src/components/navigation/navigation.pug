@@ -1,7 +1,7 @@
 nav.navigation(v-if='props')
   .navigation__container
     router-link.navigation__logo(to="/", :class="{ 'navigation__logo--hide': $route.path === '/' && !$store.state.menu, 'navigation__logo--menu': $store.state.menu }" v-on:click.native='closeMenu')
-      Icon.navigation__logo-icon(name='logo-color', :class="{ 'navigation__logo-icon--white': $route.path === '/get-started' && !$store.state.menu }")
+      Icon.navigation__logo-icon(name='logo', :class="{ 'navigation__logo-icon--white': $route.path === '/get-started' && !$store.state.menu }")
     .navigation__nav-primary
       .navigation__item(@click='handleClick("loc")', ref='location', :class="{ 'navigation__item--mobile-hide': $store.state.menu}")
         Icon.navigation__icon(name='location')
@@ -16,7 +16,7 @@ nav.navigation(v-if='props')
             .navigation__link--number(v-html='phone.number')
             
       .navigation__hamburger(@click='toggleMenu', :class="{'navigation__hamburger--active': $store.state.menu, 'navigation__hamburger--white': $route.path === '/get-started' && !$store.state.menu || $route.path === '/about-us' && !$store.state.menu || $route.path === '/invisalign' && !$store.state.menu}")
-        transition-group(name='crossfade' tag='div')
+        transition-group(name='nav-crossfade' tag='div')
           .navigation__hamburger-menu(v-show='!$store.state.menu' key='menu') menu
           .navigation__hamburger-exit(v-show='$store.state.menu' key='exit') exit
         span

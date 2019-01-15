@@ -2,12 +2,14 @@
 
   &--main
     display: block
-    position: absolute
+    position: relative
+    transition: all .2s ease
     border-radius: 26px
     box-shadow: $shadow-button
     background: $teal
     padding: rem-calc(5) 0
-    width: 186px
+    width: 100%
+    text-align: center
     color: $white
 
     &:after
@@ -19,3 +21,12 @@
       width: 102.5%
       height: 112.5%
       content: ''
+
+    @media (hover: hover)
+      &:hover
+        box-shadow: $shadow
+        background: $blue-green
+
+        &:after
+          opacity: 0
+          border-color: $blue-green

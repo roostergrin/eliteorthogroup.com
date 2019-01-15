@@ -16,38 +16,15 @@
     transform: translateY(0)
     opacity: 1
 
-// @mixin cross($animation, $deg)
-//   animation: #{$animation} .45s ease forwards
-//   @keyframes #{$animation}
-//     0%
-//       transform: rotate(0)
-//       width: 0
-//     50%
-//       top: 40%
-//       left: 35%
-//       transform: rotate(0) translateZ(0)
-//       width: 30px
-//     100%
-//       top: 40%
-//       left: 35%
-//       transform: rotate($deg) translateZ(0)
-//       width: 30px
-
-
-
-// --- Bounce Effects
-
-@keyframes funFaded
+@keyframes text-animation
   0%
-    transform: translateY(12%) scale(.75)
+    transform: translateY(-4px)
     opacity: 0
-  75%
-    transform: scale(1.05)
-  85%
-    opacity: 1
+  50%
+    transform: translateY(0)
   100%
-    transform: translateY(0) scale(1)
-    opacity: 1
+    transform: translateY(0)
+    opacity: 1    
 
 // --- Modal Effects
 

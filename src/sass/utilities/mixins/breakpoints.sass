@@ -6,6 +6,10 @@
   @media screen and (max-width: #{$screen-lg})
     @content
 
+@mixin ipad-pro
+  @media screen and (min-height: 1366px) and (max-width: #{$screen-md})
+    @content
+
 @mixin tablet-lg
   @media screen and (max-width: #{$screen-md})
     @content
