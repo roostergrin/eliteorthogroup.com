@@ -1,0 +1,67 @@
+.hero-pages
+  @include ipad-pro
+    height: 80vh
+  @include tablet
+    height: 80vh
+  position: relative
+  width: 100vw
+  height: 100vh
+
+  &__bg
+    @extend .img-norm
+    z-index: -1
+
+    .pages-get-started &
+      @include tablet-lg
+        background-position: 75%
+      @include tablet
+        background-position: 85%
+      @include phone
+        background-position: 77%
+
+    .pages-treatments &
+      @include ipad-pro
+        background-position: 85%
+      @include tablet
+        background-position: 90%
+      @include phone
+        background-position: 76%
+
+  &__container
+    @include tablet
+      top: 70%
+      left: 50%
+    @include phone
+      width: 100%
+    display: flex
+    position: absolute
+    top: 50%
+    left: 30%
+    flex-direction: column
+    align-items: center
+    transform: translate(-50%, -50%)
+
+    .pages-treatments &
+      @include ipad-pro
+        top: 70%
+
+  &__title
+    @extend .hero
+    margin-bottom: 1.5rem
+
+    span
+      @include tablet
+        text-shadow: $text-shadow
+        color: $white
+      display: inline-block
+      position: relative
+      animation: text-animation .65s cubic-bezier(.39, .575, .28, .995) forwards
+      opacity: 0
+      min-width: 10px
+      min-height: 10px
+
+  &__appt-btn
+    @extend .button--main
+    @include tablet
+      display: none
+    max-width: 168px

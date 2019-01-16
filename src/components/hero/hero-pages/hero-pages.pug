@@ -1,0 +1,6 @@
+.hero-pages
+  .hero-pages__bg(:style="{ backgroundImage: 'url(' + props.image + ')' }")
+  .hero-pages__container
+    .hero-pages__title
+      span(v-for='letter, i in props.title', :key='i', v-html='letter', :style="{ animationDelay: (i + 15)* .015 + 's'}")
+    router-link.hero-pages__appt-btn(to='/contact') Schedule Consult.  
