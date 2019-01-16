@@ -1,0 +1,30 @@
+@mixin title($class-name)
+  @include ipad-pro
+    margin: 0 auto rem-calc(60)
+  @include tablet
+    margin: 0 auto rem-calc(55)
+  position: relative
+  transform: translateY(1rem)
+  transition: opacity .65s cubic-bezier(.165, .84, .44, 1), transform .65s cubic-bezier(.165, .84, .44, 1)
+  opacity: 0
+  margin: 0 auto rem-calc(35)
+  max-width: 350px
+  text-align: center
+
+  &:after
+    position: absolute
+    bottom: -1rem
+    left: 50%
+    transform: translateX(-50%)
+    transition: width .4s cubic-bezier(.165, .84, .44, 1) .25s
+    border-bottom: 4px solid $teal
+    border-radius: 2.5px
+    width: 0
+    content: ''
+
+  .#{$class-name}--active &
+    transform: translateY(0)
+    opacity: 1
+
+    &:after
+      width: 40px

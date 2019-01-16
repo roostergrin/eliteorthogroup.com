@@ -8,7 +8,7 @@ import store from './shared/store'
 /* eslint-disable */
 import { vendors } from './resources/vendors'
 import { fonts } from './resources/fonts'
-import { Icon } from './resources/components'
+import { components } from './resources/components'
 /* eslint-enable */
 
 Vue.config.productionTip = false

@@ -1,0 +1,12 @@
+.custom-home-welcome(v-waypoint='{ active: true, callback: onScroll, options: options }', :class="{ 'custom-home-welcome--active': active }")
+  .custom-home-welcome__title(v-html='props.title')
+  .custom-home-welcome__text(v-html='props.text')
+  .custom-home-welcome__container
+    .custom-home-welcome__col--left
+      .custom-home-welcome__accent(v-html='props.highlight')
+      .custom-home-welcome__image-container
+        LazyImage.custom-home-welcome__image(:src='props.image')
+    .custom-home-welcome__col--right
+      Icon.custom-home-welcome__quotes(name='quotes')
+      .custom-home-welcome__quote(v-html='props.quote')       
+        

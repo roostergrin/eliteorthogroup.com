@@ -13,6 +13,8 @@ body
   -moz-osx-font-smoothing: grayscale
 
 h1
+  @include phone
+    font-size: 18px
   line-height: 1.17
   letter-spacing: 2px
   font-family: $roboto
@@ -39,6 +41,7 @@ a
 .accent
   line-height: .94
   letter-spacing: 2px
+  font-family: $roboto
   font-size: 64px
   font-weight: 400
 
@@ -71,3 +74,6 @@ a
   color: $teal
   font-size: 15px
   font-weight: 700
+
+.teal
+  color: $teal

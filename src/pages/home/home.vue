@@ -2,6 +2,7 @@
 
 <script>
 import HeroHome from 'components/hero/hero-home/hero-home'
+import Welcome from 'custom/custom-home-welcome/custom-home-welcome'
 
 export default {
   name: 'Home',
@@ -11,7 +12,8 @@ export default {
     }
   },
   components: {
-    HeroHome
+    HeroHome,
+    Welcome
   }
 }
 </script>

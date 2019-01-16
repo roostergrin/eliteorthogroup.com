@@ -1,0 +1,107 @@
+.custom-home-welcome
+  @include tablet
+    padding: 2rem 0
+  padding: rem-calc(71) 0
+
+  &__title
+    @extend h1
+    @include title(custom-home-welcome)
+
+  &__text
+    @include text-fade(custom-home-welcome, .15s)
+    margin: 0 auto
+    padding: 0 2rem
+    width: 100%
+    max-width: 594px
+
+  &__container
+    @extend .container
+    @include phone
+      padding-right: 0
+    margin-top: 2rem
+
+  &__col
+    &--left
+      @extend .col-7
+      @include phone
+        padding-right: 0
+      display: flex
+      position: relative
+      justify-content: flex-end
+
+    &--right
+      @extend .col-5
+      @include tablet
+        display: none
+      display: flex
+      position: relative
+      align-items: center
+      padding-left: rem-calc(49)
+
+  &__accent
+    @extend .accent
+    @include desktop-lg
+      left: 5%
+    @include ipad-pro
+      top: 25%
+    @include phone
+      max-width: rem-calc(89)
+      font-size: 32px
+    @include text-fade(custom-home-welcome, 0s)
+    position: absolute
+    top: 20%
+    left: 0
+    z-index: 2
+    max-width: 333px
+
+    @media screen and (max-width: 1044px)
+      top: 25%
+
+  &__image-container
+    @include phone
+      max-width: 80%
+      height: rem-calc(289)
+    position: relative
+    width: 100%
+    max-width: rem-calc(454)
+    height: rem-calc(504)
+    overflow: hidden
+
+    @supports (object-fit: cover)
+      object-fit: cover
+
+    &:before
+      position: absolute
+      top: 0
+      left: 0
+      transform: translateX(-100%)
+      z-index: 1
+      background-color: $white
+      width: 100%
+      height: 100%
+      content: ''
+
+      .custom-home-welcome--active &
+        animation: slide-in 1s cubic-bezier(.39, .575, .28, .995) forwards
+
+  &__image
+    transition: transform .65s cubic-bezier(.39, .575, .28, .995)
+    visibility: hidden
+
+    .custom-home-welcome--active &
+      animation: visible 1s cubic-bezier(.39, .575, .28, .995) forwards
+      animation-delay: .25s
+
+  &__quotes
+    @include text-fade(custom-home-welcome, .35s)
+    position: absolute
+    top: 10%
+    left: 1rem
+    transform: rotate(180deg) translateY(-50%)
+    z-index: -1
+    width: rem-calc(190)
+    height: rem-calc(127)
+    fill: $cloudy
+
+  &__quote
+    @include text-fade(custom-home-welcome, .45s)  

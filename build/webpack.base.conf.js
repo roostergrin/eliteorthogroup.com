@@ -45,7 +45,10 @@ module.exports = {
       templates: resolve('./src/shared/templates'),
       svg: resolve('/src/assets/svg'),
       custom: resolve('/src/components/custom'),
-      resources: resolve('/src/resources')
+      resources: resolve('/src/resources'),
+      global: resolve('/src/components/global')
+      // ,
+      // block: resolve('src/components/block')
     }
   },
   module: {

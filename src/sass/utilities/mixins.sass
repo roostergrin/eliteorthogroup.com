@@ -5,12 +5,21 @@
 @import './mixins/breakpoints.sass'
 @import './mixins/buttons.sass'
 @import './mixins/hamburgers.sass'
+@import './mixins/titles.sass'
 
 // --------------------------------------------------------
 // spinner options
 // TODO: add to styleguide
 // TODO: remove comments
 // --------------------------------------------------------
+
+@mixin text-fade($class-name, $delay)
+  transition: opacity 1s ease
+  opacity: 0
+  transition-delay: $delay
+
+  .#{$class-name}--active &
+    opacity: 1
 
 @mixin spinner($color)
   position: absolute
@@ -58,74 +67,6 @@
       100%
         transform: rotate(360deg)
 
-// --------------------------------------------------------
-// iterator options
-// TODO: add to styleguide
-// TODO: remove comments
-// TODO: this name of iterator isnt helpful on functionality for users support cant come in and know what the utility is with that name
-// --------------------------------------------------------
-
-@mixin link-fade($amount, $animation, $duration, $timing, $delay)
-  // Spielberg Ortho
-  animation: $animation $duration ease forwards
-  animation-delay: $delay
-  opacity: 0
-
-  @for $i from 1 through $amount
-    &:nth-child(#{$i})
-      animation-delay: (($i - 1) * $timing)
-
-// --------------------------------------------------------
-// fade options
-// TODO: add to styleguide
-// --------------------------------------------------------
-
-@mixin fade-in($duration)
-  opacity: 0
-  &.fade
-    animation: fade-in $duration ease-in-out forwards
-
-@mixin fade-out($duration)
-  opacity: 0
-  &.fade
-    animation: fade-out $duration ease-in-out forwards
-
-@mixin fade-in-up($duration)
-  opacity: 0
-  &.fade
-    animation: fade-in-up $duration ease-in-out forwards
-
-@mixin fade-out-up($duration)
-  opacity: 0
-  &.fade
-    animation: fade-out-up $duration ease-in-out forwards
-
-@mixin fade-in-down($duration)
-  opacity: 0
-  &.fade
-    animation: fade-in-down $duration ease-in-out forwards
-
-@mixin fade-out-down($duration)
-  opacity: 0
-  &.fade
-    animation: fade-out-down $duration ease-in-out forwards
-
-@mixin fade-right($duration)
-  opacity: 0
-  &.fade
-    animation: fade-in-left $duration ease-in-out forwards
-
-@mixin fade-out-right($duration)
-  opacity: 0
-  &.fade
-    animation: fade-out-right $duration ease-in-out forwards
-
-@mixin fade-in-left($duration)
-  opacity: 0
-  &.fade
-    animation: fade-in-left $duration ease-in-out forwards
-
-@mixin fade-out-left($duration)
-  opacity: 0
-  &.fade
-    animation: fade-out-left $duration ease-in-out forwards
+  // @for $i from 1 through $amount
+  //   &:nth-child(#{$i})
+  //     animation-delay: (($i - 1) * $timing)
