@@ -4,7 +4,7 @@
       .hero-home__logo
         Icon.hero-home__logo-icon(name='logo')
       .hero-home__title
-        span(v-for='letter, i in props.title', :key='i', v-html='letter', :style="{ animationDelay: (i + 15) * .015 + 's'}")
+        span(v-for='letter, i in props.title', :key='i', v-html='letter', :style="{ animationDelay: (i + 15) * .035 + 's'}")
       router-link.hero-home__appt-btn(to='/contact') Schedule Consult.
   .hero-home__bg
     transition-group(name='hero-crossfade' tag='div')

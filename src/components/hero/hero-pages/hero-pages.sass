@@ -52,10 +52,10 @@
     span
       @include tablet
         text-shadow: $text-shadow
-        color: $white
+        color: $teal
       display: inline-block
       position: relative
-      animation: text-animation .65s cubic-bezier(.39, .575, .28, .995) forwards
+      animation: text-animation .85s cubic-bezier(.39, .575, .28, .995) forwards
       opacity: 0
       min-width: 10px
       min-height: 10px
@@ -64,4 +64,6 @@
     @extend .button--main
     @include tablet
       display: none
+    animation: fade-in .45s ease forwards .65s
+    opacity: 0
     max-width: 168px

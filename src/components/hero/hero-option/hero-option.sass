@@ -1,0 +1,139 @@
+.hero-option
+  @include ipad-pro
+    height: 80vh
+  @include tablet
+    height: 80vh
+  position: relative
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+
+  &__bg
+    @extend .img-norm
+    z-index: -1
+
+    .pages-braces &
+      @include ipad-pro
+        background-position: 80%
+      @include tablet
+        background-position: 100%
+      @include phone
+        background-position: 90%
+
+    .pages-about-us &
+      @include ipad-pro
+        background-position: 100%
+      @include tablet
+        background-position: 100%
+      @include phone
+        background-position: 88%
+      @media screen and (max-width: 375px)
+        background-position: 85%
+
+    .pages-invisalign &
+      @include ipad-pro
+        background-position: 90%
+      @include tablet
+        background-position: 90%
+      @include phone
+        background-position: 85%
+
+  &__overlay
+    @include ipad-pro
+      display: none
+    @include tablet
+      display: none
+    position: absolute
+    top: 0
+    left: 0
+    transform: skewX(-30deg) translateX(-116%)
+    transition: transform .55s cubic-bezier(.39, .575, .28, .995)
+    background: $white
+    width: 100vw
+    height: 100vh
+
+    .pages-braces &,
+    .pages-invisalign &
+      &:after
+        position: absolute
+        top: 0
+        right: 0
+        transform: translateX(-251%)
+        transition: transform .75s cubic-bezier(.39, .575, .28, .995) .25s
+        z-index: 1
+        background: $pale-grey
+        width: 30%
+        height: 100%
+        content: ''
+
+      &.hero-option__overlay--open
+        &:after
+          transform: translateX(0)
+
+    &--open
+      transform: skewX(-30deg) translateX(-50%)
+
+  &__container
+    @include tablet
+      top: 70%
+      left: 50%
+    @include phone
+      width: 90%
+    display: flex
+    position: absolute
+    top: 50%
+    left: 35%
+    flex-direction: column
+    align-items: center
+    transform: translate(-50%, -50%)
+    max-width: 400px
+
+    .pages-braces &
+      align-items: flex-start
+      max-width: 415px
+
+    .pages-about-us &
+      align-items: flex-start
+      @include ipad-pro
+        top: 70%
+
+    .pages-invisalign &
+      @include ipad-pro
+        top: 42%
+
+  &__title
+    @extend .hero
+    @include ipad-pro
+      .pages-about-us &
+        text-shadow: $text-shadow
+        color: $white
+    @include tablet
+      display: none
+    margin-bottom: 1.5rem
+
+    span
+      display: inline-block
+      position: relative
+      animation: text-animation .65s cubic-bezier(.39, .575, .28, .995) forwards
+      opacity: 0
+      min-width: 10px
+      min-height: 10px
+
+    &--mobile
+      @include tablet
+        display: block
+        text-shadow: $text-shadow
+        color: $teal
+      display: none
+
+      .pages-about-us &,
+      .pages-invisalign &
+        color: $white
+
+  &__appt-btn
+    @extend .button--main
+    @include tablet
+      display: none
+    animation: fade-in .45s ease forwards 1.25s
+    opacity: 0
+    max-width: 168px

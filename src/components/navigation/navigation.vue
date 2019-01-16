@@ -18,9 +18,6 @@ export default {
       this.$store.state.menu ? this.$store.dispatch('VIEW_MENU', false) : this.$store.dispatch('VIEW_MENU', true)
       this.$store.state.menu ? document.body.classList.add('body-stop') : document.body.classList.remove('body-stop')
     },
-    // closeMenu () {
-    //   this.$store.dispatch('VIEW_MENU', false)
-    // },
     handleClick (i) {
       if (i === 'loc') {
         this.$refs.phone.classList.remove('nav-desktop__item--active')

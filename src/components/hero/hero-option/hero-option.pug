@@ -1,0 +1,9 @@
+.hero-option
+  .hero-option__bg(:style="{ backgroundImage: 'url(' + props.image + ')' }")
+  .hero-option__overlay(:class="{ 'hero-option__overlay--open': active }")
+  .hero-option__container
+    .hero-option__title
+      span(v-for='letter, i in props.title', :key='i', v-html='letter', :style="{ animationDelay: (i + 20)* .035 + 's'}")
+    .hero-option__title.hero-option__title--mobile
+      span(v-for='letter, j in props.title_mobile', :key='j', v-html='letter', :style="{ animationDelay: (j + 35)* .025 + 's'}")
+    router-link.hero-option__appt-btn(to='/contact') Schedule Consult.  

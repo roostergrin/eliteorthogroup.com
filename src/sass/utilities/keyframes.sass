@@ -8,6 +8,12 @@
       transform: translate($translate-x-to, $translate-y-to)
       opacity: 1
 
+@keyframes fade-in
+  from
+    opacity: 0
+  100%
+    opacity: 1
+
 @keyframes dropdown-fade-in-down
   0%
     transform: translateY(-10px)
@@ -22,6 +28,7 @@
     opacity: 0
   50%
     transform: translateY(0)
+    opacity: 1
   100%
     transform: translateY(0)
     opacity: 1
