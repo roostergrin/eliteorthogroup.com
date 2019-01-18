@@ -6,6 +6,9 @@ import { onScroll } from 'resources/mixins'
 export default {
   data () {
     return {
+      invisalign: 0,
+      patients: 0,
+      adults: 0,
       options: {
         root: null,
         rootMargin: '0px',
@@ -14,6 +17,11 @@ export default {
     }
   },
   props: ['props'],
-  mixins: [onScroll]
+  mixins: [onScroll],
+  methods: {
+    increment () {
+
+    }
+  }
 }
 </script>
