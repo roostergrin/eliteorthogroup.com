@@ -47,7 +47,7 @@
     @include phone
       max-width: rem-calc(89)
       font-size: 32px
-    @include text-fade(custom-home-welcome, 0s)
+    @include text-fade(custom-home-welcome, .25s)
     position: absolute
     top: 20%
     left: 0
@@ -93,7 +93,7 @@
       animation-delay: .25s
 
   &__quotes
-    @include text-fade(custom-home-welcome, .35s)
+    @include text-fade(custom-home-welcome, .45s)
     position: absolute
     top: 10%
     left: 1rem
@@ -104,4 +104,4 @@
     fill: $cloudy
 
   &__quote
-    @include text-fade(custom-home-welcome, .45s)  
+    @include text-fade(custom-home-welcome, .5s)

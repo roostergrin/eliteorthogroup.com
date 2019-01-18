@@ -1,0 +1,19 @@
+.custom-home-invisalign(v-waypoint='{ active: true, callback: onScroll, options: options }', :class="{ 'custom-home-invisalign--active': active }")
+  .custom-home-invisalign__title(v-html='props.title')
+  .custom-home-invisalign__container
+    .custom-home-invisalign__col--left
+      svg.custom-home-invisalign__graph--satisfaction(width='100%' height='100%' viewBox='0 0 42 42')
+        circle.custom-home-invisalign__graph-ring(cx='21' cy='21' r='18.91549430918952')
+        circle.custom-home-invisalign__graph-segment(cx='21' cy='21' r='18.91549430918952')
+        circle.custom-home-invisalign__graph-inner(cx='21' cy='21' r='17')    
+      .custom-home-invisalign__content--satisfaction(v-html='props.satisfaction') 
+    .custom-home-invisalign__col--right
+      .custom-home-invisalign__upper
+        svg.custom-home-invisalign__graph--patients(width='100%' height='100%' viewBox='0 0 42 42')
+          circle.custom-home-invisalign__graph-ring.custom-home-invisalign__graph-ring--patients(cx='21' cy='21' r='17.91549430918952')
+          circle.custom-home-invisalign__graph-segment.custom-home-invisalign__graph-segment--patients(cx='21' cy='21' r='17.91549430918952')
+          circle.custom-home-invisalign__graph-inner.custom-home-invisalign__graph-inner--patients(cx='21' cy='21' r='14.5')
+        .custom-home-invisalign__content(v-html='props.patients') 
+      .custom-home-invisalign__lower
+        Icon.custom-home-invisalign__icon(name='smiley-face')
+        .custom-home-invisalign__content(v-html='props.adults')        

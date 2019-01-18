@@ -1,0 +1,99 @@
+.custom-home-invisalign
+  @include tablet
+    display: none
+
+  &__title
+    @extend h1
+    @include title(custom-home-invisalign)
+
+  &__container
+    @extend .container
+    margin-top: 3rem
+
+  &__col
+    &--left
+      @extend .col-4
+      @extend .col-1--offset
+
+    &--right
+      @extend .col-5
+      @extend .col-2--offset
+      display: flex
+      flex-direction: column
+      justify-content: center
+      padding-right: 3rem
+
+  &__percentage
+    @extend .h1-alt
+
+    &--alt
+      @extend .h1-alt
+      color: $green-grey
+
+  &__content
+    margin-left: rem-calc(12)
+    &--satisfaction
+      position: absolute
+      right: -3rem
+      bottom: 2rem
+      max-width: 180px
+
+  &__icon
+    border: 1px solid $teal
+    border-radius: 50%
+    padding: 5px
+    width: 100%
+    max-width: rem-calc(112)
+    height: rem-calc(112)
+    fill: $green-grey
+
+  &__graph
+    &-ring,
+    &-segment
+      stroke-width: 2
+      fill: transparent
+
+      &--patients
+        stroke-width: 4
+
+    &-ring
+      stroke: $duck-egg
+
+    &-segment
+      transform: rotate(45deg)
+      transition: transform 2.5s cubic-bezier(.215, .61, .355, 1), stroke-dasharray 2.25s cubic-bezier(.215, .61, .355, 1) .25s
+      transform-origin: center
+      stroke: $teal
+      stroke-dasharray: 2 98
+      stroke-dashoffset: 26
+
+      .custom-home-invisalign--active &
+        transform: rotate(405deg)
+        stroke-dasharray: 96 4
+
+      &--patients
+        stroke: $green-grey
+        stroke-dashoffset: 29
+
+        .custom-home-invisalign--active &
+          stroke-dasharray: 83 17
+
+    &-inner
+      fill: transparent
+      stroke-width: .2
+      stroke: $teal
+
+      &--patients
+        stroke-width: .6
+        stroke: $green-grey
+
+    &--patients
+      max-width: rem-calc(107)
+
+  &__upper,
+  &__lower
+    display: flex
+    align-items: center
+
+  &__upper
+    margin-bottom: 3rem

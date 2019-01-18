@@ -1,21 +1,13 @@
 <template lang='pug' src='./lazy-image.pug'></template>
-
 <script>
 import ErrorJpg from '@/assets/no-image.jpg'
 export default {
   props: {
     src: {
-      type: Object,
+      type: String,
       default () {
-        return {
-          url: ErrorJpg,
-          sizes: {
-            medium: ErrorJpg
-          },
-          alt: 'Error loading image.'
-        }
-      },
-      required: true
+        return ErrorJpg
+      }
     },
     imageFit: {
       type: String,
@@ -31,18 +23,17 @@ export default {
   data () {
     return {
       loaded: false,
+      compSrc: null,
+      componentLoaded: false,
       width: null,
       height: null,
       naturalWidth: null,
-      naturalHeight: null,
-      intersectionOptions: {
-        root: null,
-        rootMargin: '0px 0px 0px 0px',
-        thresholds: [0]
-      }
+      naturalHeight: null
     }
   },
   mounted () {
+    this.setCompressed()
+    this.componentLoaded = true
     let intervalTime = setInterval(() => {
       if (this.$refs.image.naturalWidth > 0 && this.$refs.image.naturalHeight > 0 && this.$refs.image.naturalWidth !== undefined && this.$refs.image.naturalHeight !== undefined) {
         this.setSizing()
@@ -51,11 +42,11 @@ export default {
     }, 100)
   },
   methods: {
+    setCompressed () {
+      this.compSrc = this.src.split(/\.(?=[^.]+$)/).join('-compressed.')
+    },
     onWaypoint ({ going, direction }) {
       if (going === 'in') {
-        this.loaded = true
-      }
-      if (going === 'out') {
         this.loaded = true
       }
     },
