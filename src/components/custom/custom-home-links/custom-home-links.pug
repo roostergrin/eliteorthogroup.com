@@ -1,0 +1,16 @@
+.custom-home-links
+  .custom-home-links__row--upper
+    .custom-home-links__link(v-for='link, i in props.links', :key='i')
+      .custom-home-links__bg(:style="{ backgroundImage: 'url(' + link.image + ')' }")
+      .custom-home-links__overlay
+      .custom-home-links__label(v-html='link.label')
+  .custom-home-links__row--lower
+    .custom-home-links__image-container
+      LazyImage.custom-home-links__image--lower(:src='props.image_lower')    
+    .custom-home-links__right
+      .custom-home-links__link--lower(v-for='lowerLink, j in props.links_lower', :key='j')
+        .custom-home-links__title(v-html='lowerLink.title')
+        .custom-home-links__label--alt(v-html='lowerLink.href')  
+      
+          
+  
