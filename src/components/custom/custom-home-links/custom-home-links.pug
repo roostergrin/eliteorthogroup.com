@@ -4,13 +4,16 @@
       .custom-home-links__bg(:style="{ backgroundImage: 'url(' + link.image + ')' }")
       .custom-home-links__overlay
       .custom-home-links__label(v-html='link.label')
-  .custom-home-links__row--lower
-    .custom-home-links__image-container
-      LazyImage.custom-home-links__image--lower(:src='props.image_lower')    
+  .custom-home-links__row--lower(v-waypoint='{ active: true, callback: onScroll, options: options }')
+    .custom-home-links__image-container(:class="{ 'custom-home-links__image-container--active': active }")
+      LazyImage.custom-home-links__image--lower(:src='props.image_lower')       
     .custom-home-links__right
-      .custom-home-links__link--lower(v-for='lowerLink, j in props.links_lower', :key='j')
-        .custom-home-links__title(v-html='lowerLink.title')
-        .custom-home-links__label--alt(v-html='lowerLink.href')  
+      .custom-home-links__link--lower(v-for='lowerLink, j in props.links_lower', :key='j', ref='links')
+        .custom-home-links__dots
+          span(v-for='dot, k in 6', :key='k') .
+        .custom-home-links__content  
+          .custom-home-links__title(v-html='lowerLink.title')
+          .custom-home-links__label--alt(v-html='lowerLink.href')  
       
           
   
