@@ -1,0 +1,17 @@
+.footer
+  .footer__upper
+    .footer__container
+      .footer__row--social
+        a.footer__social-link(v-for='media, j in props.acf.social_links', :key='j', :href='media.href' target='_blank')
+          Icon.footer__social-icon(:name='media.icon')
+      .footer__row--locations
+        .footer__item(v-for='location, k in props.acf.location', :key='k')
+          a.footer__contact(:href='location.link' target='_blank')
+            Icon.footer__contact-icon(name='location')
+            .footer__label(v-html='location.address')
+          a.footer__contact(:href='location.phone_href')
+            Icon.footer__contact-icon(name='phone')
+            .footer__label {{location.phone}}
+  .footer__lower
+    .footer__copyright
+        |  © 2018 Elite Orthodontics | Online Advantage by #[a(href='https://www.roostergrin.com' target='_blank') RoosterGrin Media]     

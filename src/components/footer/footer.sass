@@ -1,0 +1,95 @@
+.footer
+  background: $cloudy
+  padding: rem-calc(50) 0 0
+
+  &__container
+    display: flex
+    flex-direction: column
+    margin: 0 auto
+    padding: 0 2rem 2rem
+    width: 100%
+    max-width: 474px
+
+  &__row
+    &--social
+      display: flex
+      justify-content: center
+
+    &--locations
+      @include tablet
+        justify-content: center
+      @include phone
+        flex-direction: column
+      display: flex
+      position: relative
+      align-items: center
+      justify-content: space-between
+      margin-top: 2rem
+
+  &__social-icon
+    transition: all .2s ease
+    margin: auto rem-calc(9)
+    border: 1px solid $green-grey
+    border-radius: 50%
+    padding: rem-calc(11)
+    width: rem-calc(41)
+    height: rem-calc(41)
+    fill: $green-grey
+
+    &:hover
+      border-color: $teal
+      fill: $teal
+
+  &__item
+    @include tablet
+      margin-left: 1.5rem
+      width: 25%
+    @include phone
+      margin-bottom: 1.5rem
+    width: 47%
+    min-width: 190px
+
+  &__contact
+    display: flex
+    align-items: center
+    transition: color .2s ease
+    padding: 0
+    color: $green-grey
+    font-size: 13px
+
+    &:last-child
+      .footer__label
+        padding: rem-calc(5) 0 0 rem-calc(7)
+
+    &:hover
+      color: $teal
+
+      .footer__contact-icon
+        fill: $teal
+
+  &__contact-icon
+    transition: fill .2s ease
+    margin-right: rem-calc(8)
+    width: 1rem
+    height: 1rem
+    font-size: 0
+    fill: $green-grey
+
+  &__label
+    border-left: 1px solid $green-grey
+    padding: 0 0 rem-calc(5) rem-calc(7)
+
+  &__lower
+    border-top: 1px solid $white
+    padding: 1.5rem 2rem 1rem
+    text-align: center
+
+  &__copyright
+    color: $white
+    font-size: 14px
+
+    a
+      color: $white
+
+      &:hover
+        color: $green-grey

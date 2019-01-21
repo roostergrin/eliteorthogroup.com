@@ -1,6 +1,7 @@
 <template lang="pug" src="./app.pug"></template>
 
 <script>
+import Footer from 'components/footer/footer'
 import Navigation from 'components/navigation/navigation'
 import Menu from 'components/menu/menu'
 
@@ -22,6 +23,7 @@ export default {
     }
   },
   components: {
+    Footer,
     Navigation,
     Menu
   }
