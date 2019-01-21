@@ -16,7 +16,9 @@ const store = new Vuex.Store({
     showModal: {},
     modalContent: {},
     menu: {},
-    loading: true
+    loading: true,
+    mobile: false,
+    insta: {}
   },
   mutations: mutations,
   actions: actions

@@ -1,0 +1,6 @@
+.custom-home-instagram(v-waypoint="{ active: true, callback: onScroll, options: options }", :class="{ 'custom-home-instagram--active': active }")
+  .custom-home-instagram__container
+    .custom-home-instagram__thumb.custom-home-instagram__thumb--title
+      .custom-home-instagram__title Follow Us on Instagram
+    a.custom-home-instagram__thumb(v-for='post, i in props', :key='i', :href='post.link')
+      img.custom-home-instagram__img(:src='post.image')

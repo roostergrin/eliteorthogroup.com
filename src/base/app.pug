@@ -1,4 +1,4 @@
-#app 
+#app(:class="{'is-mobile': $store.state.mobile}") 
   Navigation
   transition(name='fade')
     Menu(v-if='$store.state.menu')

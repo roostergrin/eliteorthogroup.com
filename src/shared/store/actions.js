@@ -9,7 +9,9 @@ import {
   VIEW_TYPES,
   VIEW_SHOWMODAL,
   VIEW_MODALCONTENT,
-  VIEW_MENU
+  VIEW_MENU,
+  GET_INSTAGRAM,
+  IS_MOBILE
 } from './mutation-types'
 
 const actions = {
@@ -58,6 +60,20 @@ const actions = {
   //     }
   //   })()
   // },
+  GET_INSTAGRAM ({ commit }) {
+    (async () => {
+      try {
+        const response = await axios.get('https://api.instagram.com/v1/users/7336526395/media/recent?access_token=7336526395.a568162.87d9215931724567924efd228ce387c6')
+        const data = response.data.data.reduce((allData, data) => {
+          let newData = { image: data.images.standard_resolution.url, text: data.caption.text, video: data.videos, link: data.link }
+          allData.push(newData)
+          return allData
+        }, [])
+        commit(GET_INSTAGRAM, data)
+        // console.log(data)
+      } catch (e) { console.log('INSTA API: ' + e) }
+    })()
+  },
   VIEW_NAV ({ commit }, data) {
     commit(VIEW_NAV, data)
   },
@@ -75,6 +91,9 @@ const actions = {
   },
   VIEW_MENU ({ commit }, data) {
     commit(VIEW_MENU, data)
+  },
+  IS_MOBILE ({ commit }, data) {
+    commit(IS_MOBILE, data)
   }
 }
 
