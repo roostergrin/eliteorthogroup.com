@@ -1,0 +1,14 @@
+.slider-testimonials(v-waypoint="{ active: true, callback: onScroll, options: options}", :class="{ 'slider-testimonials--active': active}")
+  .slider-testimonials__title(v-html='props.title')
+  .slider-testimonials__container
+    .slider-testimonials__image
+      transition(name='fade')
+        img.slider-testimonials__headshot(v-for='image, k in props.headshots', :key='k', :src='image.image' v-if='k === show')
+    .slider-testimonials__body
+      .slider-testimonials__loader
+        .slider-testimonials__circle(:style="{ transform: 'rotate(' + (num * 90) + 'deg)'}")
+      .slider-testimonials__slides
+        transition(name='fade')
+          .slider-testimonials__slide(v-for='slide, i in props.slides', :key='i' v-if='i === show' v-html='slide.text')
+      .slider-testimonials__pagination
+        .slider-testimonials__dot(v-for='dot, j in props.slides.length', :key='j', :class="{ 'slider-testimonials__dot--active': j === show}" @click='moveSlide(j)')

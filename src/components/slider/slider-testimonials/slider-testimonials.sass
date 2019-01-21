@@ -1,0 +1,99 @@
+.slider-testimonials
+  background: $ice
+  padding: rem-calc(73) 0
+
+  &__title
+    @extend h1
+    @include title(slider-testimonials)
+
+  &__container
+    @extend .container
+    flex-direction: column
+
+  &__image
+    @include tablet
+      margin: 0 auto
+    position: relative
+    margin: 2rem auto
+    width: rem-calc(121)
+    height: rem-calc(121)
+
+  &__headshot
+    position: absolute
+    top: 0
+    left: 0
+    border-radius: 50%
+    box-shadow: $shadow
+    width: 100%
+    height: 100%
+
+  &__body
+    @include desktop-lg
+      margin: 0 auto
+      width: 100%
+      max-width: 1280px
+    @include tablet
+      flex-direction: column
+    display: flex
+    align-items: center
+
+  &__loader
+    @extend .col-2
+    text-align: center
+
+  &__circle
+    @include tablet
+      display: none
+    display: inline-block
+    position: relative
+    transition: transform .5s cubic-bezier(.39, .575, .28, .995)
+    border-top: 10px solid $dark-grey
+    border-right: 10px solid $dark-grey
+    border-bottom: 10px solid $dark-grey
+    border-left: 10px solid $teal
+    border-radius: 50%
+    width: rem-calc(50)
+    height: rem-calc(50)
+
+  &__slides
+    @extend .col-8
+    @include tablet
+      height: 200px
+    @include phone
+      height: 300px
+    @include phone-sm
+      height: 320px
+    height: 100px
+
+    @media screen and (max-width: 325px)
+      height: 400px
+
+  &__slide
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100%
+    text-align: center
+
+  &__pagination
+    @extend .col-2
+    @include tablet
+      display: flex
+      justify-content: center
+
+  &__dot
+    @include tablet
+      margin: 0 rem-calc(8)
+    margin: rem-calc(8) auto
+    border: 1px solid $cloudy
+    border-radius: 50%
+    width: rem-calc(10)
+    height: rem-calc(10)
+
+    &:hover
+      cursor: pointer
+
+    &--active
+      border-color: $teal
+      background-color: $teal

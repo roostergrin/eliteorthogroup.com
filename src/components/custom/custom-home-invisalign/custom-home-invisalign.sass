@@ -54,6 +54,10 @@
     height: rem-calc(112)
     fill: $green-grey
 
+    // IE11 fix for incorrect width / height
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+      width: 0
+
   &__graph
     &-ring,
     &-segment
