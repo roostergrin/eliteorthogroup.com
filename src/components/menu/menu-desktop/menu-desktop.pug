@@ -2,7 +2,7 @@
   .menu-desktop__container
     .menu-desktop__col--left
       transition(name='fade-in-up')
-        .menu-desktop__image-container(v-for='image, j in props.acf.menu_images', :key='j' v-if='links[j].path === $route.path && !hover || hover === j + 1')
+        .menu-desktop__image-container(v-for='image, j in props.menu_images', :key='j' v-if='links[j].path === $route.path && !hover || hover === j + 1')
           img.menu-desktop__image(:src='image.url', :alt='image.alt')
     .menu-desktop__col--right
       router-link.menu-desktop__link(v-for='link, i in links', :to='link.path' v-if='link.navigation', :key='i', :class="{ 'menu-desktop__link--hover': hover === i + 1, 'menu-desktop__link--active': link.path === $route.path && !hover }" v-on:mouseenter.native='onHover(i)' v-on:mouseleave.native='onLeave' v-on:click.native='closeMenu')
@@ -10,5 +10,5 @@
         .menu-desktop__link-name {{ link.name }}
         
     .menu-desktop__sidebar
-      a.menu-desktop__social-link(v-for='media, k in props.acf.social_links', :key='k', :href='media.href' target='_blank')
+      a.menu-desktop__social-link(v-for='media, k in props.social_links', :key='k', :href='media.href' target='_blank')
         Icon.menu-desktop__social-icon(:name='media.icon')    

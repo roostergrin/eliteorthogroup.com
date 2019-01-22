@@ -5,10 +5,10 @@
       router-link.menu-mobile__appt-btn(to='/contact') Schedule Consult
     .menu-mobile__lower
       .menu-mobile__social
-        a.menu-mobile__social-link(v-for='media, j in props.acf.social_links', :key='j', :href='media.href' target='_blank')
+        a.menu-mobile__social-link(v-for='media, j in props.social_links', :key='j', :href='media.href' target='_blank')
           Icon.menu-mobile__social-icon(:name='media.icon')
       .menu-mobile__contact-container
-        .menu-mobile__item(v-for='location, k in props.acf.location', :key='k')
+        .menu-mobile__item(v-for='location, k in props.location', :key='k')
           a.menu-mobile__contact(:href='location.link' target='_blank')
             Icon.menu-mobile__contact-icon(name='location')
             .menu-mobile__label(v-html='location.address')

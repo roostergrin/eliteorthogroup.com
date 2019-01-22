@@ -18,7 +18,7 @@
   &__link
     @include phone
       width: 100%
-      height: 70vw
+      height: 50vw
     position: relative
     cursor: pointer
     width: 33.33%
@@ -53,6 +53,8 @@
 
   &__label
     @extend .photo
+    @include phone
+      font-size: 24px
     position: absolute
     top: 50%
     left: 50%
@@ -117,7 +119,7 @@
       font-size: 22px
     @include phone
       font-size: 18px
-    margin-bottom: rem-calc(8) 
+    margin-bottom: rem-calc(8)
 
   &__dots
     @include tablet

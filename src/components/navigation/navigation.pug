@@ -6,12 +6,12 @@ nav.navigation(v-if='props')
       .navigation__item(@click='handleClick("loc")', ref='location', :class="{ 'navigation__item--mobile-hide': $store.state.menu}")
         Icon.navigation__icon(name='location')
         .navigation__dropdown.navigation__dropdown--location
-          a.navigation__link(v-for='location, j in props.acf.location', :key='j', :href='location.link' target='_blank' v-html='location.city')
+          a.navigation__link(v-for='location, j in props.location', :key='j', :href='location.link' target='_blank' v-html='location.city')
           
       .navigation__item(@click='handleClick("phone")', ref='phone', :class="{ 'navigation__item--mobile-hide': $store.state.menu}")
         Icon.navigation__icon(name='phone')
         .navigation__dropdown
-          a.navigation__link(v-for='phone, i in props.acf.phone', :key='i', :href="'tel:1-'+ phone.number")
+          a.navigation__link(v-for='phone, i in props.phone', :key='i', :href="'tel:1-'+ phone.number")
             .navigation__link--location(v-html='phone.city')
             .navigation__link--number(v-html='phone.number')
             

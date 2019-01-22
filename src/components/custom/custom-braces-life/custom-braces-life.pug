@@ -1,0 +1,19 @@
+.custom-braces-life
+  .custom-braces-life__header(v-waypoint="{ active: true, callback: onScroll, options: options }", :class="{ 'custom-braces-life__header--active': active }")
+    .custom-braces-life__title(v-html='props.title')
+    .custom-braces-life__subtitle(v-html='props.subtitle')
+      
+  .custom-braces-life__brushing(v-waypoint="{ active: true, callback: onSecondScroll, options: options}", :class="{ 'custom-braces-life__brushing--active': brushingActive }")
+    .custom-braces-life__col--left
+      .custom-braces-life__brushing-title(v-html='props.brushing_title')
+      .custom-braces-life__brushing-content(v-html='props.brushing_content')
+    .custom-braces-life__col--right
+      .custom-braces-life__image-container
+        LazyImage.custom-braces-life__brushing-image(:src='props.brushing_image')
+          
+  .custom-braces-life__lower(v-waypoint="{ active: true, callback: onThirdScroll, options: lowerOptions}", :class="{ 'custom-braces-life__lower--active': lowerActive }")
+    .custom-braces-life__pepper(:style="{ backgroundImage: 'url(' + props.pepper + ')' }" v-parallax='0.09')
+    .custom-braces-life__nuts(:style="{ backgroundImage: 'url(' + props.nuts + ')' }" v-parallax='0.09')
+    .custom-braces-life__content
+      .custom-braces-life__content-highlight(v-html='props.highlight')
+      .custom-braces-life__content-accent(v-html='props.accent')                   
