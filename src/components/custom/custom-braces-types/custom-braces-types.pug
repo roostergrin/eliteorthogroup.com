@@ -1,0 +1,9 @@
+.custom-braces-types(v-waypoint='{ active: true, callback: onScroll, options: options }', :class="{ 'custom-braces-types--active': active }")
+  .custom-braces-types__title(v-html='props.title')
+  .custom-braces-types__container  
+    .custom-braces-types__tabs
+      .custom-braces-types__tab(v-for='tab, i in props.tabs', :key='i' v-html='tab.label', :class="{ 'custom-braces-types__tab--active': activeTab === i }" @mouseover='onHover(i)')
+    .custom-braces-types__images
+      transition(name='fade')
+        .custom-braces-types__image(v-for='image, j in props.images', :key="'image' + j" v-if='activeTab === j')    
+          LazyImage(:src='image.src')

@@ -2,7 +2,8 @@
 
 <script>
 import Hero from 'components/hero/hero-option/hero-option'
-import Life from 'components/custom/custom-braces-life/custom-braces-life'
+import Life from 'custom/custom-braces-life/custom-braces-life'
+import Types from 'custom/custom-braces-types/custom-braces-types'
 
 export default {
   computed: {
@@ -12,7 +13,8 @@ export default {
   },
   components: {
     Hero,
-    Life
+    Life,
+    Types
   }
 }
 </script>
