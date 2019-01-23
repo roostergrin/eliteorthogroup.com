@@ -1,4 +1,4 @@
-.divider-braces
+.divider
   @include desktop-lg
     height: rem-calc(500)
   @include tablet
@@ -28,13 +28,15 @@
   &__container
     @include tablet-lg
       left: 75%
-      max-width: 350px
+      max-width: rem-calc(300)
+    @include phone
+      max-width: rem-calc(224)
     position: absolute
     top: 50%
     left: 65%
     transform: translate(-50%, -50%)
     width: 100%
-    max-width: 544px
+    max-width: rem-calc(544)
     text-align: center
 
     @media screen and (max-width: 700px)
@@ -46,13 +48,25 @@
 
   &__text
     @extend h2
-    @include phone
-      color: $teal
-      font-size: 20px
-    text-transform: capitalize
+    span
+      @include phone
+        color: $teal
+        font-size: 20px
+      display: inline-block
+      position: relative
+      opacity: 0
+      min-width: 10px
+      min-height: 10px
+      text-transform: none
+
+      .divider__container--active &
+        animation: text-animation .65s cubic-bezier(.39, .575, .28, .995) forwards
 
   &__appt-btn
     @extend .button--main
     margin: 2rem auto 0
     padding: rem-calc(11) 0
     max-width: 208px
+    &:after
+      width: 102%
+      height: 110.5%

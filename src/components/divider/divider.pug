@@ -1,0 +1,6 @@
+.divider(v-waypoint="{ active: true, callback: onScroll, options: options }")
+  .divider__bg(:style="{ backgroundImage: 'url(' + props.bg + ')' }")
+  .divider__container(:class="{ 'divider__container--active': active }")
+    .divider__text
+      span(v-for='letter, i in props.text' v-html='letter', :style="{ animationDelay: i * .035 + 's'}")
+    router-link.divider__appt-btn(to='/contact') Schedule Consult.
