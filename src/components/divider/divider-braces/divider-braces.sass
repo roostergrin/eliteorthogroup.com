@@ -1,0 +1,58 @@
+.divider-braces
+  @include desktop-lg
+    height: rem-calc(500)
+  @include tablet
+    height: rem-calc(320)
+  @include phone
+    height: rem-calc(400)
+  position: relative
+  height: rem-calc(420)
+
+  @media screen and (max-width: 700px)
+    display: flex
+    flex-direction: column-reverse
+
+  &__bg
+    @extend .img-norm
+    @include tablet
+      background-position: 20% center
+    @include phone-sm
+      position: relative
+      background-position: 5% center
+    background-position: left center
+
+    @media screen and (min-width: 381px) and (max-width: 700px)
+      position: relative
+      background-position: left center
+
+  &__container
+    @include tablet-lg
+      left: 75%
+      max-width: 350px
+    position: absolute
+    top: 50%
+    left: 65%
+    transform: translate(-50%, -50%)
+    width: 100%
+    max-width: 544px
+    text-align: center
+
+    @media screen and (max-width: 700px)
+      position: relative
+      top: 0
+      left: 0
+      transform: none
+      margin: 0 auto 2rem
+
+  &__text
+    @extend h2
+    @include phone
+      color: $teal
+      font-size: 20px
+    text-transform: capitalize
+
+  &__appt-btn
+    @extend .button--main
+    margin: 2rem auto 0
+    padding: rem-calc(11) 0
+    max-width: 208px

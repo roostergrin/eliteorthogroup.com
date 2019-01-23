@@ -35,7 +35,6 @@ export default {
     this.setCompressed()
     this.componentLoaded = true
     let intervalTime = setInterval(() => {
-      console.log(this.$refs.image.naturalWidth)
       if (this.$refs.image.naturalWidth > 0 && this.$refs.image.naturalHeight > 0 && this.$refs.image.naturalWidth !== undefined && this.$refs.image.naturalHeight !== undefined) {
         this.setSizing()
         clearInterval(intervalTime)
