@@ -1,7 +1,9 @@
 <template lang="pug" src="./invisalign.pug"></template>
 
 <script>
+import Divider from 'components/divider/divider'
 import Hero from 'components/hero/hero-option/hero-option'
+import How from 'custom/custom-invisalign-how/custom-invisalign-how'
 
 export default {
   computed: {
@@ -10,7 +12,9 @@ export default {
     }
   },
   components: {
-    Hero
+    Divider,
+    Hero,
+    How
   }
 }
 </script>

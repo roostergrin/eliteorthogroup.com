@@ -1,0 +1,11 @@
+.custom-invisalign-how(v-waypoint="{ active: true, callback: onScroll, options: options}", :class="{'custom-invisalign-how--active': active }")
+  .custom-invisalign-how__title(v-html='props.title')
+  .custom-invisalign-how__text(v-html='props.text')
+  .custom-invisalign-how__container
+    .custom-invisalign-how__col--left
+      .custom-invisalign-how__content(v-for='content, i in props.content', :key='i')
+        .custom-invisalign-how__content-header(v-html='content.header')
+        .custom-invisalign-how__content-body(v-html='content.body')
+    .custom-invisalign-how__col--right
+      .custom-invisalign-how__image-container
+        LazyImage.custom-invisalign-how__image(:src='props.image')
