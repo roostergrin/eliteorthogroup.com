@@ -14,8 +14,14 @@
 
   &__bg
     @extend .img-norm
+    @include tablet-lg
+      .pages-invisalign &
+        background-position: 35% center
     @include tablet
       background-position: 20% center
+    @include phone
+      .pages-invisalign &
+        background-position: 10% center
     @include phone-sm
       position: relative
       background-position: 5% center
@@ -45,6 +51,27 @@
       left: 0
       transform: none
       margin: 0 auto 2rem
+
+    .pages-invisalign &
+      max-width: rem-calc(652)
+
+      @media screen and (max-width: 1280px)
+        left: 75%
+        max-width: rem-calc(510)
+
+      @media screen and (max-width: $screen-md)
+        max-width: rem-calc(360)
+
+      @media screen and (max-width: 700px)
+        position: relative
+        top: 0
+        left: 0
+        transform: none
+        margin: 0 auto 2rem
+
+      @media screen and (max-width: $screen-xs)
+        max-width: rem-calc(270)
+
 
   &__text
     @extend h2
