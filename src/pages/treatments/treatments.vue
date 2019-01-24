@@ -2,6 +2,7 @@
 
 <script>
 import Hero from 'components/hero/hero-pages/hero-pages'
+import Sections from 'custom/custom-treatments-sections/custom-treatments-sections'
 
 export default {
   computed: {
@@ -10,7 +11,8 @@ export default {
     }
   },
   components: {
-    Hero
+    Hero,
+    Sections
   }
 }
 </script>

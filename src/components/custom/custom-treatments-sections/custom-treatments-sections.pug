@@ -1,0 +1,9 @@
+.custom-treatments-sections
+  .custom-treatments-sections__section(v-for='section,i in props', :key='i' v-waypoint='{ active: true, callback: onScroll, options: options }')
+    .custom-treatments-sections__upper
+      .custom-treatments-sections__content
+        .custom-treatments-sections__content-header(v-html='section.title')
+        .custom-treatments-sections__content-body(v-html='section.body')
+    .custom-treatments-sections__lower
+      .custom-treatments-sections__image(:style="{ backgroundImage: 'url(' + section.image + ')'}")        
+  

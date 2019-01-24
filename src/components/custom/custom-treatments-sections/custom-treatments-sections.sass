@@ -1,0 +1,43 @@
+.custom-treatments-sections
+
+  &__section
+    &:first-child
+      .custom-treatments-sections__upper
+        background: $ice
+
+      .custom-treatments-sections__content-header
+        @media screen and (max-width: $screen-sm)
+          margin: 0 auto 4rem
+
+  &__upper
+    @include desktop-lg
+      padding: rem-calc(90) 0
+    padding: rem-calc(60) 2rem
+
+  &__content
+    @include desktop-lg
+      max-width: rem-calc(784)
+    margin: 0 auto
+    width: 100%
+    max-width: rem-calc(564)
+
+    &-header
+      @extend h1
+      @include title(custom-treatments-sections__section)
+      @include phone
+        margin: 0 auto 2.5rem
+
+  &__lower
+    @include desktop-lg
+      height: rem-calc(520)
+    @include phone
+      height: rem-calc(200)
+    position: relative
+    width: 100%
+    height: 420px
+
+  &__image
+    @extend .img-norm
+
+  &__link
+    @extend .link-main

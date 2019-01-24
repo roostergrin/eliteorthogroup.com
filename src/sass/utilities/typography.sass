@@ -5,7 +5,7 @@ body
   @include desktop-lg
     font-size: 18px
   @include phone
-    font-size: 14px 
+    font-size: 14px
   margin: 0
   text-rendering: optimizeLegibility
   line-height: 1.38
@@ -79,9 +79,13 @@ a
   font-weight: 700
 
 .link-main
+  transition: color .2s ease
   color: $teal
   font-size: 15px
   font-weight: 700
+
+  &:hover
+    color: $green-grey
 
 .teal
   color: $teal
