@@ -1,0 +1,81 @@
+.custom-invisalign-technology
+  @include tablet
+    padding: 2rem 0
+  background: $pale-grey
+  padding: 5rem 0
+
+  &__container
+    @extend .container
+    @include phone
+      padding: 0
+
+  &__col
+    &--left
+      @extend .col-5
+      @extend .col-1--offset
+      flex-direction: column
+      justify-content: center
+
+    &--right
+      @extend .col-5
+      justify-content: flex-end
+
+    &--left,
+    &--right
+      @include tablet-lg
+        flex-basis: calc((6/12) * 100%)
+        margin: 0 auto
+      @include tablet
+        padding: 0
+      display: flex
+
+  &__content
+    @include phone
+      padding: 0 2rem
+    margin-bottom: 2rem
+
+    &-header
+      @extend h3
+      margin-bottom: rem-calc(8)
+      letter-spacing: 2px
+      color: $teal
+      font-family: $roboto
+
+  &__image-container
+    @include desktop-lg
+      max-width: rem-calc(409)
+      height: rem-calc(370)
+    @include tablet
+      margin: 0 auto
+    @include phone
+      max-width: rem-calc(249)
+      height: rem-calc(225)
+    position: relative
+    width: 100%
+    max-width: rem-calc(360)
+    height: rem-calc(322)
+    overflow: hidden
+
+    &:before
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      transform: translateX(-100%)
+      z-index: 1
+      background-color: $pale-grey
+      width: 100%
+      height: 100%
+      content: ''
+
+    .custom-invisalign-technology__container--active &
+      &:before
+        animation: slide-in 1s cubic-bezier(.39, .575, .28, .995) forwards
+
+  &__image
+    transition: transform .65s cubic-bezier(.39, .575, .28, .995)
+    visibility: hidden
+
+    .custom-invisalign-technology__container--active &
+      animation: visible 1s cubic-bezier(.39, .575, .28, .995) forwards
+      animation-delay: .25s

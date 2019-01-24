@@ -1,9 +1,12 @@
-.custom-invisalign-technology
-  .custom-invisalign-technology__container
+.custom-invisalign-technology(v-waypoint='{ active: true, callback: onScroll, options: options}')
+  .custom-invisalign-technology__container(:class="{ 'custom-invisalign-technology__container--active': active }")
+    
     .custom-invisalign-technology__col--left
       .custom-invisalign-technology__content
-        .custom-invisalign-technology__content-header
-        .custom-invisalign-technology__content-body
+        .custom-invisalign-technology__content-header(v-html='props.header')
+        .custom-invisalign-technology__content-body(v-html='props.body')
+          
     .custom-invisalign-technology__col--right
-      
+      .custom-invisalign-technology__image-container
+        LazyImage.custom-invisalign-technology__image(:src='props.image')
   

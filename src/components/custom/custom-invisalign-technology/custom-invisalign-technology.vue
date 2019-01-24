@@ -12,7 +12,7 @@ export default {
         threshold: [0.5]
       }
     }
-  }
+  },
   props: ['props'],
   mixins: [onScroll]
 }

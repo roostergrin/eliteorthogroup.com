@@ -4,6 +4,7 @@
 import Divider from 'components/divider/divider'
 import Hero from 'components/hero/hero-option/hero-option'
 import How from 'custom/custom-invisalign-how/custom-invisalign-how'
+import Technology from 'custom/custom-invisalign-technology/custom-invisalign-technology'
 
 export default {
   computed: {
@@ -14,7 +15,8 @@ export default {
   components: {
     Divider,
     Hero,
-    How
+    How,
+    Technology
   }
 }
 </script>
