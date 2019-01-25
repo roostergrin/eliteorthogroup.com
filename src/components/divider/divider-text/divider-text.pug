@@ -1,0 +1,4 @@
+.divider-text(v-waypoint='{ active: true, callback: onScroll, options: options }', :class="{ 'divider-text--active': active }")
+  .divider-text__container
+    .divider-text__title(v-html='props.title')
+    .divider-text__body(v-html='props.body')

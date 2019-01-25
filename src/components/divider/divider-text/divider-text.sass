@@ -1,0 +1,21 @@
+.divider-text
+  @include desktop-lg
+    padding: rem-calc(70) 0
+  @include phone
+    padding: 3rem 0 2rem
+  background-color: $ice
+  padding: rem-calc(70) 0 rem-calc(50)
+
+  &__container
+    @include desktop-lg
+      max-width: rem-calc(720)
+    margin: 0 auto
+    padding: 0 2rem
+    width: 100%
+    max-width: rem-calc(608)
+
+  &__title
+    @extend h1
+    @include title(divider-text)
+    margin-bottom: 4rem
+    max-width: 600px
