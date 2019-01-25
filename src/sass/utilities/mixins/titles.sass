@@ -8,7 +8,7 @@
   transition: opacity .65s ease, transform 1s cubic-bezier(.165, .84, .44, 1)
   opacity: 0
   margin: 0 auto rem-calc(35)
-  max-width: 350px
+  max-width: rem-calc(350)
   text-align: center
 
   &:after
@@ -28,3 +28,6 @@
 
     &:after
       width: 40px
+
+  .custom-treatments-accordian &
+    max-width: rem-calc(400)

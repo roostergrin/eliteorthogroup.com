@@ -1,0 +1,12 @@
+.custom-treatments-accordian(v-waypoint='{ active: true, callback: onScroll, options: options}', :class="{ 'custom-treatments-accordian--active': active }")
+  .custom-treatments-accordian__title(v-html='props.title')
+  .custom-treatments-accordian__wrapper(v-for='tab, i in props.tabs', :key='i' @click='handleClick(i)', :class="{ 'custom-treatments-accordian__wrapper--active': activeTab === i && open }")
+    .custom-treatments-accordian__container
+      .custom-treatments-accordian__cross(:class="{ 'custom-treatments-accordian__cross--active': activeTab === i && open}")
+        span
+        span
+      .custom-treatments-accordian__question(v-html='tab.question')    
+    .custom-treatments-accordian__answer-container(v-show='activeTab === i && open')
+      .custom-treatments-accordian__answer(v-html='tab.answer')      
+      
+    

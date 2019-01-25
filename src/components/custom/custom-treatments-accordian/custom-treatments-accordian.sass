@@ -1,0 +1,83 @@
+.custom-treatments-accordian
+  background-color: $pale-grey
+  padding: rem-calc(70) 0
+
+  &__title
+    @extend h1
+    @include title(custom-treatments-accordian)
+    margin-bottom: 4rem
+
+  &__wrapper
+    transition: max-height 1s cubic-bezier(.215, .61, .355, 1)
+    border-top: 1px solid $duck-egg
+    border-bottom: 1px solid $duck-egg
+    cursor: pointer
+    padding: 2rem
+    max-height: 88px
+
+    &:not(:first-child)
+      margin-top: -1px
+
+    &--active
+      @include phone
+        max-height: 320px
+      max-height: 286px
+
+  &__container
+    display: flex
+    align-items: center
+    margin: 0 auto
+    width: 100%
+    max-width: 1192px
+
+  &__cross
+    position: relative
+    margin-right: rem-calc(10)
+    width: .8rem
+    height: .8rem
+
+    span
+      display: block
+      position: absolute
+      top: 50%
+      transform: translate(0, -50%)
+      background: $teal
+      width: 100%
+      height: 3px
+
+      &:last-child
+        transform: translate(0, -50%) rotate(90deg)
+        transition: transform .2s ease-in-out
+        transform-origin: center
+
+    &--active
+      span
+        &:last-child
+          transform: translate(0, -50%) rotate(0deg)
+
+  &__question
+    color: $green-grey
+
+  &__answer-container
+    overflow: hidden
+
+  &__answer
+    @include tablet-lg
+      padding: 2rem 0 0 rem-calc(22)
+    transform: translateY(-15%)
+    opacity: 0
+    margin: 0 auto
+    padding: 2rem 0 0
+    width: 100%
+    max-width: 920px
+
+    .custom-treatments-accordian--active &
+      animation: slide-down .65s cubic-bezier(.215, .61, .355, 1) .15s forwards
+
+      @keyframes slide-down
+        0%
+          transform: translateY(-15%)
+          opacity: 0
+        100%
+          transform: translateY(0)
+          opacity: 1
