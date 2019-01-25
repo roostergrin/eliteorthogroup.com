@@ -2,6 +2,7 @@
 
 <script>
 import Divider from 'components/divider/divider-text/divider-text'
+import First from 'custom/custom-started-first/custom-started-first'
 import Hero from 'components/hero/hero-pages/hero-pages'
 
 export default {
@@ -12,6 +13,7 @@ export default {
   },
   components: {
     Divider,
+    First,
     Hero
   }
 }

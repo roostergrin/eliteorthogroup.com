@@ -1,0 +1,27 @@
+.custom-started-first(v-waypoint='{ active: true, callback: onScroll, options: options }', :class="{ 'custom-started-first--active': active }")
+  .custom-started-first__title(v-html='props.title')
+  .custom-started-first__banner(v-waypoint='{ active: true, callback: onBannerScroll, options: secondOptions }', :class="{ 'custom-started-first__banner--active': bannerActive }")
+    .custom-started-first__banner-bg(:style="{ backgroundImage: 'url(' + props.banner + ')' }")
+    .custom-started-first__banner-text(v-html='props.banner_title')
+  
+  .custom-started-first__container(v-waypoint='{ active: true, callback: onSecondScroll, options: secondOptions }', :class="{ 'custom-started-first__container--active': active2 }")
+    .custom-started-first__header(v-html='props.header')
+    
+    .custom-started-first__row
+      .custom-started-first__col(v-for='item, i in upper', :key='i')
+        .custom-started-first__item
+          .custom-started-first__title-row
+            .custom-started-first__number {{ i + 1 }}.
+            .custom-started-first__item-title(v-html='item.title')
+          .custom-started-first__item-body(v-html='item.body')  
+          
+    .custom-started-first__row
+      .custom-started-first__col
+        .custom-started-first__item(v-for='item, j in lower', :key='j')
+          .custom-started-first__title-row
+            .custom-started-first__number {{ j + 3 }}.
+            .custom-started-first__item-title(v-html='item.title')
+          .custom-started-first__item-body(v-html='item.body')
+      .custom-started-first__col
+        .custom-started-first__image-container
+          LazyImage.custom-started-first__image(:src='props.image')    
