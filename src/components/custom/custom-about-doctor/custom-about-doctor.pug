@@ -1,0 +1,9 @@
+.custom-about-doctor(v-waypoint='{ active: true, callback: onScroll, options: options }', :class="{ 'custom-about-doctor--active': active }")
+  .custom-about-doctor__title(v-html='props.title')
+  .custom-about-doctor__headline(v-html='props.headline')
+  .custom-about-doctor__container
+    .custom-about-doctor__col--left
+      .custom-about-doctor__bio(v-html='props.bio')
+    .custom-about-doctor__col--right
+      .custom-about-doctor__image-container
+        LazyImage.custom-about-doctor__image(:src='props.image')    

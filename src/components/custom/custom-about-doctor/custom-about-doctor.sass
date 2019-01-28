@@ -1,0 +1,54 @@
+.custom-about-doctor
+  @include ipad-pro
+    padding: rem-calc(50) 0
+  @include tablet
+    padding: 2rem 0
+  background-color: $ice
+  padding: rem-calc(70) 0 rem-calc(120)
+
+  &__title
+    @extend h1
+    @include title(custom-about-doctor)
+
+  &__headline
+    @extend h3
+    @include phone
+      font-size: 18px
+    position: relative
+    margin: rem-calc(65) auto
+    padding: 0 2rem
+    width: 100%
+    max-width: rem-calc(668)
+
+  &__container
+    @extend .container
+    @include tablet
+      flex-direction: column-reverse
+    @include phone
+      padding: 0
+    // display: flex
+
+  &__col
+    &--left
+      @extend .col-5
+      @include tablet
+        margin-top: 2rem
+      @include phone
+        padding: 0 2rem
+
+    &--right
+      @extend .col-7
+      @include tablet
+        padding: 0
+
+  &__image-container
+    @include desktop-lg
+      height: rem-calc(655)
+    @include tablet-lg
+      height: rem-calc(450)
+    @include tablet
+      margin: 0 auto
+      max-width: rem-calc(515)
+    @include phone
+      height: rem-calc(330)
+    height: rem-calc(550)
