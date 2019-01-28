@@ -4,6 +4,7 @@
 import Divider from 'components/divider/divider-text/divider-text'
 import First from 'custom/custom-started-first/custom-started-first'
 import Hero from 'components/hero/hero-pages/hero-pages'
+import Smiles from 'components/slider/slider-our-smiles/slider-our-smiles'
 
 export default {
   computed: {
@@ -14,7 +15,8 @@ export default {
   components: {
     Divider,
     First,
-    Hero
+    Hero,
+    Smiles
   }
 }
 </script>

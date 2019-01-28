@@ -1,0 +1,33 @@
+.slider-our-smiles
+  padding-top: rem-calc(70)
+
+  &__title
+    @extend h1
+    @include title(slider-our-smiles)
+    max-width: 17rem
+
+  &__image-container
+    @include tablet-lg
+      height: calc((100vw *.5) * .67)
+    @include phone
+      height: calc((100vw) * .67)
+    height: calc((100vw * .33333) * .67)
+
+  &__pagination
+    display: flex
+    justify-content: center
+    height: 2rem
+
+  &__bullet
+    position: relative
+    margin: rem-calc(12) 4px 0
+    border: 1px solid $cloudy
+    border-radius: 50%
+    background: transparent
+    cursor: pointer
+    width: 8px
+    height: 8px
+
+    &--active
+      border-color: $teal
+      background: $teal

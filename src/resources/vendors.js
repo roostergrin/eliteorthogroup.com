@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VeeValidate from 'vee-validate'
-// import VueAwesomeSwiper from 'vue-awesome-swiper'
-// import 'swiper/dist/css/swiper.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 import VueWaypoint from 'vue-waypoint'
 import VueScrollTo from 'vue-scrollto'
 import VueParallaxJs from 'vue-parallax-js'
@@ -10,7 +10,7 @@ import VueParallaxJs from 'vue-parallax-js'
 
 const vendors = () => {
   Vue.use(VeeValidate)
-  // Vue.use(VueAwesomeSwiper, /* { default global options } */)
+  Vue.use(VueAwesomeSwiper /*, { default global options } */)
   Vue.use(VueWaypoint)
   Vue.use(VueParallaxJs, { minWidth: 1024 })
   Vue.use(VueScrollTo, {
