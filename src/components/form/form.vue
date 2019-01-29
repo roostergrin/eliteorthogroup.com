@@ -1,4 +1,4 @@
-<template lang="pug" src="./form-contact.pug"></template>
+<template lang="pug" src="./form.pug"></template>
 
 <script>
 import api from 'api'

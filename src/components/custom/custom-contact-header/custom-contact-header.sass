@@ -1,0 +1,29 @@
+.custom-contact-header
+  padding-top: rem-calc(129)
+
+  &__container
+    @extend .container
+    flex-direction: column
+
+  &__title
+    @extend .hero
+    margin: 0 auto 3rem
+
+  &__content
+    @include desktop-lg
+      max-width: rem-calc(690)
+      font-size: 30px
+    margin: 0 auto
+    max-width: rem-calc(620)
+    text-align: center
+    line-height: 2
+    color: $teal
+    font-family: $roboto
+    font-size: 26px
+    font-weight: 300
+
+  &__zoc-logo
+    margin: rem-calc(9) rem-calc(12) 0
+    // padding-top:
+    width: 8rem
+    vertical-align: middle

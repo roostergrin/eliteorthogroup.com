@@ -63,7 +63,7 @@ const actions = {
   GET_INSTAGRAM ({ commit }) {
     (async () => {
       try {
-        const response = await axios.get('https://api.instagram.com/v1/users/7336526395/media/recent?access_token=7336526395.a568162.87d9215931724567924efd228ce387c6')
+        const response = await axios.get('https://api.instagram.com/v1/users/335807461/media/recent?access_token=335807461.aea5151.e67a2b8c7aec4d6e8963a67bca2eec68')
         const data = response.data.data.reduce((allData, data) => {
           let newData = { image: data.images.standard_resolution.url, text: data.caption.text, video: data.videos, link: data.link }
           allData.push(newData)

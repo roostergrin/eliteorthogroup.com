@@ -1,0 +1,27 @@
+.form
+  .form__thank-you(v-if='formSuccess')
+  form.form__form(@submit.prevent='validate', method='post', v-if='!formSuccess')
+    
+    .form__group
+      input.form__input(name='name', v-model='fullname', v-validate="'required|alpha_spaces'", :class="{ 'form__input--error': errors.has('name') }", type='text', placeholder='First and Last Name')
+      .form__message
+          span(v-show="errors.has('name')") Your name is required.
+    
+    .form__group
+      input.form__input(name='email', v-model='email', v-validate="'required|email'", :class="{ 'input': true, 'form__input--error': errors.has('email') }", placeholder='Email')
+      .form__message
+        span(v-show="errors.has('email')") Please Input a Valid Email
+    
+    .form__group
+      input.form__input(name='phone', v-model='phone', v-validate="'required|numeric'", :class="{ 'input': true, 'form__input--error': errors.has('phone') }", placeholder='Phone Number')
+      .form__message
+        span(v-show="errors.has('phone')") Please Input a Valid Phone Number
+    
+    .form__group
+      textarea.form__input.form__input--textarea(name='message', v-model='message' placeholder='Message')
+    
+    .form__button-group
+      button.form__submit-button(@click='validate', type='submit', :disabled='formSubmitted')
+        span Send
+      .form__spinner(v-if='formSubmitted')
+        span Sending ...  
