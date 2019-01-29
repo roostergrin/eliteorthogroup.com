@@ -3,6 +3,7 @@
 <script>
 import Doctor from 'custom/custom-about-doctor/custom-about-doctor'
 import Hero from 'components/hero/hero-option/hero-option'
+import Team from 'custom/custom-about-team/custom-about-team'
 
 export default {
   computed: {
@@ -12,7 +13,8 @@ export default {
   },
   components: {
     Doctor,
-    Hero
+    Hero,
+    Team
   }
 }
 </script>

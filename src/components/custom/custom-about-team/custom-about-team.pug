@@ -1,0 +1,24 @@
+.custom-about-team(v-waypoint='{ active: true, callback: onScroll, options: options }', :class="{ 'custom-about-team--active': active }")
+  .custom-about-team__title(v-html='props.title')
+  .custom-about-team__container
+    .custom-about-team__col--left
+      
+      .custom-about-team__content
+        Icon.custom-about-team__logo-swirl(name='logo')
+        .custom-about-team__text(v-html='props.text')
+          
+      .custom-about-team__image-container(v-waypoint='{ active: true, callback: onImageScroll, options: options }')
+        LazyImage.custom-about-team__image--left(:src='props.image_left')
+          
+      .custom-about-team__schedule-container
+        .custom-about-team__schedule-text(v-html='props.schedule_text')
+        router-link.custom-about-team__appt-btn(to='/contact') Schedule Consult.     
+        
+    .custom-about-team__col--right
+      
+      .custom-about-team__image-container(v-waypoint='{ active: true, callback: onImageScroll, options: options }')
+        LazyImage.custom-about-team__image--upper-right(:src='props.image_upper_right')
+          
+      .custom-about-team__image-container(v-waypoint='{ active: true, callback: onImageScroll, options: options }')
+        .custom-about-team__lower-text(v-html='props.schedule_text')
+        LazyImage.custom-about-team__image--lower-right(:src='props.image_lower_right')      

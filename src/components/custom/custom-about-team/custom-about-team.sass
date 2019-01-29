@@ -1,0 +1,128 @@
+.custom-about-team
+  @include phone
+    padding: rem-calc(50) 0
+  padding: rem-calc(71) 0 5rem
+
+  &__title
+    @extend h1
+    @include title(custom-about-team)
+    margin-bottom: 5rem
+
+  &__container
+    @extend .container
+    @include phone
+      padding: 0
+
+  &__col
+    &--left,
+    &--right
+      @include tablet-lg
+        flex-basis: calc((6/12) * 100%)
+        width: calc((6/12) * 100%)
+      @include tablet
+        flex-basis: 100%
+        align-items: center
+        width: 100%
+      @include phone
+        padding: 0
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+
+    &--left
+      @extend .col-7
+
+    &--right
+      @extend .col-5
+
+  &__content
+    @include tablet-lg
+      padding-left: 0
+    @include phone
+      padding: 0 2rem
+    position: relative
+    margin-bottom: rem-calc(51)
+    padding-left: rem-calc(71)
+
+  &__logo-swirl
+    @include tablet-lg
+      left: -2rem
+    @include phone
+      left: 0
+    position: absolute
+    top: -1.5rem
+    left: 0
+    z-index: -1
+    width: rem-calc(160)
+    height: rem-calc(154)
+    .grey,
+    .dark-grey
+      fill: none
+    .teal
+      fill: $teal
+
+  &__image-container
+    @include desktop-lg
+      height: rem-calc(491)
+    @include tablet
+      margin-bottom: 1rem
+      width: 100%
+      max-width: rem-calc(455)
+    @include phone
+      margin-bottom: 0
+      height: rem-calc(320)
+    position: relative
+    height: rem-calc(407)
+
+    .custom-about-team__col--left &
+      @include tablet-lg
+        padding-left: 0
+      @include tablet
+        display: none
+      padding-left: rem-calc(71)
+
+  &__image
+    &--left
+      @include desktop-lg
+        max-width: rem-calc(549)
+      max-width: rem-calc(455)
+
+  &__text,
+  &__schedule-text
+    @extend h3
+    font-family: $roboto
+
+  &__text
+    @include phone
+      font-size: 16px
+    max-width: rem-calc(538)
+    line-height: 1.47
+
+  &__schedule-container
+    @include tablet-lg
+      margin: rem-calc(51) auto 4rem
+    @include tablet
+      display: none
+    margin: rem-calc(140) auto 4rem
+    max-width: rem-calc(426)
+
+  &__schedule-text
+    margin-bottom: 2rem
+
+  &__appt-btn
+    @extend .button--main
+    margin: 0 auto
+    max-width: 190px
+
+  &__lower-text
+    @include tablet
+      display: block
+    display: none
+    position: absolute
+    bottom: rem-calc(60)
+    left: 2rem
+    z-index: 2
+    max-width: rem-calc(240)
+    color: $white
+    font-family: $roboto
+    font-size: 20px

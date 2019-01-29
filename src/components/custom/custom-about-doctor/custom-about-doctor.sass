@@ -26,7 +26,6 @@
       flex-direction: column-reverse
     @include phone
       padding: 0
-    // display: flex
 
   &__col
     &--left
@@ -35,6 +34,9 @@
         margin-top: 2rem
       @include phone
         padding: 0 2rem
+      display: flex
+      justify-content: center
+      flex-direction: column
 
     &--right
       @extend .col-7
