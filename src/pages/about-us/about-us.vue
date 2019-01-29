@@ -3,6 +3,7 @@
 <script>
 import Doctor from 'custom/custom-about-doctor/custom-about-doctor'
 import Hero from 'components/hero/hero-option/hero-option'
+import Offices from 'custom/custom-about-office/custom-about-office'
 import Team from 'custom/custom-about-team/custom-about-team'
 
 export default {
@@ -14,6 +15,7 @@ export default {
   components: {
     Doctor,
     Hero,
+    Offices,
     Team
   }
 }

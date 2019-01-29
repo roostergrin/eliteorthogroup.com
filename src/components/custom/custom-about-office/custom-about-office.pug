@@ -1,0 +1,5 @@
+.custom-about-office(v-waypoint='{ active: true, callback: onScroll, options: options }', :class="{ 'custom-about-office--active': active }")
+  .custom-about-office__title(v-html='props.title')
+  .custom-about-office__container
+    .custom-about-office__office(v-for='office, i in props.offices', :key='i')
+      iframe.custom-about-office__iframe(:src='office.src' frameborder="0" style="border:0" allowfullscreen)  
