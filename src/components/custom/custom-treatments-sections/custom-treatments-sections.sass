@@ -3,6 +3,10 @@
   &__section
     &:first-child
       .custom-treatments-sections__upper
+        @include ipad-pro
+          padding: rem-calc(50) 0
+        @include tablet
+          padding: 2rem 0
         background: $ice
 
       .custom-treatments-sections__content-header

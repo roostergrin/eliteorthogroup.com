@@ -1,4 +1,6 @@
 .custom-about-office
+  @include phone
+    padding: 0 0 2rem
   padding: rem-calc(71) 0 rem-calc(50)
 
   &__title
@@ -8,9 +10,19 @@
 
   &__container
     @extend .container
+    @include phone
+      padding: 0
 
   &__office
     @extend .col-8
+    @include desktop-lg
+      height: rem-calc(500)
+    @include tablet
+      height: rem-calc(380)
+    @include phone
+      margin: 0
+      padding: 0
+      height: rem-calc(300)
     margin: 0 auto 2rem
     height: rem-calc(420)
 
