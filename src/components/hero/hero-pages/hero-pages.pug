@@ -1,4 +1,5 @@
 .hero-pages
+  .hero-pages__waypoint(v-waypoint='{ active: true, callback: navTrigger }')
   .hero-pages__bg(:style="{ backgroundImage: 'url(' + props.image + ')' }")
   .hero-pages__container
     .hero-pages__title

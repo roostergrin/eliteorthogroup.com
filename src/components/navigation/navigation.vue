@@ -4,13 +4,26 @@
 import { closeMenu } from 'resources/mixins'
 
 export default {
+  data () {
+    return {
+      windowWidth: window.innerWidth
+    }
+  },
   computed: {
     links () {
       return this.$router.options.routes
     },
     props () {
       return this.$store.state.app.nav
+    },
+    width () {
+      return this.windowWidth
     }
+  },
+  mounted () {
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth
+    })
   },
   mixins: [closeMenu],
   methods: {

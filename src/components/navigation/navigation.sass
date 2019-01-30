@@ -16,7 +16,7 @@
     @include tablet
       width: rem-calc(92)
       height: rem-calc(75)
-    transition: width .2s ease-in-out, height .2s ease-in-out, opacity .2s ease-in-out
+    transition: width .2s ease-in-out, height .2s ease-in-out, opacity .3s ease-in-out
     width: rem-calc(160)
     height: rem-calc(129)
 
@@ -24,12 +24,13 @@
       @extend .logo
 
       &--white
-        @extend .logo--white  
+        @extend .logo--white
 
     &--hide
       @include tablet
         visibility: visible
         opacity: 1
+      transition: visibility .15s ease, opacity .15s ease, width .15s ease
       visibility: hidden
       opacity: 0
       pointer-events: none

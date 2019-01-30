@@ -1,4 +1,5 @@
 .hero-option
+  .hero-home__waypoint(v-waypoint='{ active: true, callback: navTrigger}')
   .hero-option__bg(:style="{ backgroundImage: 'url(' + props.image + ')' }")
   .hero-option__overlay(:class="{ 'hero-option__overlay--open': active }")
   .hero-option__container

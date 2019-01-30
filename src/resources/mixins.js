@@ -21,3 +21,16 @@ export const onScroll = {
     }
   }
 }
+
+export const navTrigger = {
+  methods: {
+    navTrigger ({going}) {
+      if (going === 'in') {
+        this.$store.dispatch('VIEW_NAV', false)
+      }
+      if (going === 'out') {
+        this.$store.dispatch('VIEW_NAV', true)
+      }
+    }
+  }
+}

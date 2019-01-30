@@ -1,6 +1,8 @@
 <template lang="pug" src="./hero-home.pug"></template>
 
 <script>
+import { navTrigger } from 'resources/mixins'
+
 export default {
   data () {
     return {
@@ -8,6 +10,7 @@ export default {
     }
   },
   props: ['props'],
+  mixins: [navTrigger],
   mounted () {
     setTimeout(() => { this.toggleBackground() }, 7500)
   },
