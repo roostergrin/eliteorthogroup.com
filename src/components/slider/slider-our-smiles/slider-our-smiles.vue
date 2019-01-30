@@ -13,6 +13,12 @@ export default {
         threshold: [0.5]
       },
       swiperOption: {
+        lazy: true,
+        loop: true,
+        autoplay: {
+          delay: 5000
+        },
+        centeredSlides: true,
         spaceBetween: 0,
         slidesPerView: 3,
         speed: 650,
@@ -24,6 +30,12 @@ export default {
           475: {
             slidesPerView: 1
           }
+        },
+        pagination: {
+          el: '.slider-our-smiles__pagination',
+          cliackable: true,
+          bulletClass: 'slider-our-smiles__bullet',
+          bulletActiveClass: 'slider-our-smiles__bullet--active'
         }
       }
     }
@@ -37,6 +49,7 @@ export default {
   },
   methods: {
     moveTo (j) {
+      console.log(this.swiper)
       this.swiper.slideTo(j)
       this.activeBullet = j
     }

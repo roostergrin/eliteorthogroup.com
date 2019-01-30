@@ -4,6 +4,8 @@
     swiper.slider-our-smiles__swiper(:options='swiperOption', ref='mySwiper')
       swiper-slide.slider-our-smiles__swiper-slide(v-for='slide, i in props.slides', :key='i')
         .slider-our-smiles__image-container
-          LazyImage.slider-our-smiles__image(:src='slide.src' imageFit='contain')
-    .slider-our-smiles__pagination
-      .slider-our-smiles__bullet(v-for='bullet, j in props.slides.length - 1', :class="{ 'slider-our-smiles__bullet--active': j === activeBullet }" @click='moveTo(j)')
+          //- LazyImage.slider-our-smiles__image(:src='slide.src' imageFit='contain')
+          img.slider-our-smiles__image(:src='slide.src')
+      .slider-our-smiles__pagination(slot='pagination')
+        .slider-our-smiles__bullet
+          //- (v-for='bullet, j in props.slides.length + 3', :class="{ 'slider-our-smiles__bullet--active': j === activeBullet }" @click='moveTo(j)')
