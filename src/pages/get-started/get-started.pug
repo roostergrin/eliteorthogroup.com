@@ -1,5 +1,7 @@
-.pages-get-started(v-if='props')
-  Hero(:props='props.hero')
-  First(:props='props.first')  
-  Divider(:props='props.divider')
-  Smiles(:props='props.smiles')  
+.pages-get-started
+  Loader(v-if='loading && !props')
+  div(v-if='props')
+    Hero(:props='props.hero')
+    First(:props='props.first')  
+    Divider(:props='props.divider')
+    Smiles(:props='props.smiles')  

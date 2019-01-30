@@ -37,8 +37,8 @@
       position: absolute
       top: 50%
       right: 10%
-      transform: translate(0, -50%)
-      transition: opacity .65s ease-in-out
+      transform: translate(-5%, -50%)
+      transition: opacity 1s ease-in-out, transform 1s cubic-bezier(.39, .575, .28, .995)
       opacity: 0
       padding: 0 2rem
       width: 100%
@@ -51,6 +51,7 @@
 
     &--active
       .custom-started-first__banner-text
+        transform: translate(0, -50%)
         opacity: 1
 
   &__container
@@ -160,9 +161,8 @@
         animation: slide-in 1s cubic-bezier(.39, .575, .28, .995) forwards
 
   &__image
-    transition: transform .65s cubic-bezier(.39, .575, .28, .995)
     visibility: hidden
 
     .custom-started-first__container--active &
-      animation: visible 1s cubic-bezier(.39, .575, .28, .995) forwards
+      animation: visible-fade 1s cubic-bezier(.39, .575, .28, .995) forwards
       animation-delay: .3s
