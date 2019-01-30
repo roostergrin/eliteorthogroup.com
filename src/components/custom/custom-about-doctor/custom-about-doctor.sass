@@ -53,4 +53,30 @@
       max-width: rem-calc(515)
     @include phone
       height: rem-calc(330)
+    position: relative
     height: rem-calc(550)
+    overflow: hidden
+
+    &:before
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      transform: translateX(-100%)
+      z-index: 1
+      background-color: $ice
+      width: 100%
+      height: 100%
+      content: ''
+
+    .custom-about-doctor--active &
+      &:before
+        animation: slide-in 1s cubic-bezier(.39, .575, .28, .995) forwards
+
+  &__image
+    transition: transform .65s cubic-bezier(.39, .575, .28, .995)
+    visibility: hidden
+
+    .custom-about-doctor--active &
+      animation: visible 1s cubic-bezier(.39, .575, .28, .995) forwards
+      animation-delay: .3s
