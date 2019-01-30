@@ -37,7 +37,7 @@ export default {
     onSubmit () {
       this.formSubmitted = true
       axios.post(this.postUrl, {
-        firstName: this.fullname,
+        firstName: this.firstname,
         lastName: this.lastName,
         email: this.email,
         phone: this.phone,
