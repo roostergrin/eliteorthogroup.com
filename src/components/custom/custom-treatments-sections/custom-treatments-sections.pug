@@ -1,5 +1,5 @@
 .custom-treatments-sections
-  .custom-treatments-sections__section(v-for='section,i in props', :key='i' v-waypoint='{ active: true, callback: onScroll, options: options }')
+  .custom-treatments-sections__section(v-for='section,i in props', :key='i' v-waypoint='{ active: true, callback: onScroll, options: options }', :id="'section' + (i + 1)")
     .custom-treatments-sections__upper
       .custom-treatments-sections__content
         .custom-treatments-sections__content-header(v-html='section.title')

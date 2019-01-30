@@ -1,6 +1,6 @@
 .custom-home-links
   .custom-home-links__row--upper
-    .custom-home-links__link(v-for='link, i in props.links', :key='i')
+    .custom-home-links__link(v-for='link, i in props.links', :key='i' @click='handleRoute({ path: link.path, hash: link.hash })')
       .custom-home-links__bg(:style="{ backgroundImage: 'url(' + link.image + ')' }")
       .custom-home-links__overlay
       .custom-home-links__label(v-html='link.label')
@@ -13,7 +13,7 @@
           span(v-for='dot, k in 6', :key='k') .
         .custom-home-links__content  
           .custom-home-links__title(v-html='lowerLink.title')
-          .custom-home-links__label--alt(v-html='lowerLink.href')  
+          .custom-home-links__label--alt(v-html='lowerLink.href' @click='handleRoute({ path: lowerLink.path, hash: lowerLink.hash })')  
       
           
   

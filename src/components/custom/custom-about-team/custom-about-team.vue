@@ -17,7 +17,6 @@ export default {
   mixins: [onScroll],
   methods: {
     onImageScroll ({el, going}) {
-      console.log(going)
       if (going === 'in') {
         el.classList.add('custom-about-team__image-container--active')
       }

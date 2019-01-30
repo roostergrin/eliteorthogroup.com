@@ -1,4 +1,4 @@
-.slider-our-smiles(v-waypoint='{ active: true, callback: onScroll, options: options }', :class="{ 'slider-our-smiles--active': active }")
+#smiles.slider-our-smiles(v-waypoint='{ active: true, callback: onScroll, options: options }', :class="{ 'slider-our-smiles--active': active }")
   .slider-our-smiles__title(v-html='props.title')
   .slider-our-smiles__container
     swiper.slider-our-smiles__swiper(:options='swiperOption', ref='mySwiper')

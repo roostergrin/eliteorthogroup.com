@@ -26,6 +26,12 @@ export default {
           setTimeout(() => { el.classList.add('custom-home-links__link--active') }, (i + 1) * 350)
         })
       }
+    },
+    handleRoute (obj) {
+      this.$router.push(obj.path)
+      if (obj.hash) {
+        setTimeout(() => { this.$scrollTo(obj.hash) }, 150)
+      }
     }
   }
 }
