@@ -8,11 +8,16 @@ import Links from 'custom/custom-home-links/custom-home-links'
 import Testimonials from 'components/slider/slider-testimonials/slider-testimonials'
 import Welcome from 'custom/custom-home-welcome/custom-home-welcome'
 
+import Loader from 'components/loader/loader'
+
 export default {
   name: 'Home',
   computed: {
     props () {
       return this.$store.state.pages.home
+    },
+    loading () {
+      return this.$store.state.loading
     }
   },
   components: {
@@ -21,7 +26,8 @@ export default {
     Invisalign,
     Links,
     Testimonials,
-    Welcome
+    Welcome,
+    Loader
   }
 }
 </script>

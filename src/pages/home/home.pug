@@ -1,7 +1,9 @@
-.pages-home(v-if='props')
-  HeroHome(:props='props.hero_home')
-  Welcome(:props='props.welcome')
-  Invisalign(:props='props.invisalign')
-  Links(:props='props.links')
-  Testimonials(:props='props.testimonials')
-  Instagram 
+.pages-home
+  Loader(v-if='loading && !props')
+  div(v-if='props')
+    HeroHome(:props='props.hero_home')
+    Welcome(:props='props.welcome')
+    Invisalign(:props='props.invisalign')
+    Links(:props='props.links')
+    Testimonials(:props='props.testimonials')
+    Instagram 

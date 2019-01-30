@@ -6,17 +6,23 @@ import Hero from 'components/hero/hero-option/hero-option'
 import How from 'custom/custom-invisalign-how/custom-invisalign-how'
 import Technology from 'custom/custom-invisalign-technology/custom-invisalign-technology'
 
+import Loader from 'components/loader/loader'
+
 export default {
   computed: {
     props () {
       return this.$store.state.pages.invisalign
+    },
+    loading () {
+      return this.$store.state.loading
     }
   },
   components: {
     Divider,
     Hero,
     How,
-    Technology
+    Technology,
+    Loader
   }
 }
 </script>

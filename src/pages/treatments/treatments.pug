@@ -1,4 +1,6 @@
-.pages-treatments(v-if='props')
-  Hero(:props='props.hero')
-  Sections(:props='props.sections')
-  Accordian(:props='props.accordian')  
+.pages-treatments
+  Loader(v-if='loading && !props')
+  div(v-if='props')
+    Hero(:props='props.hero')
+    Sections(:props='props.sections')
+    Accordian(:props='props.accordian')  

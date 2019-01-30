@@ -1,6 +1,8 @@
-.pages-invisalign(v-if='props')
-  Hero(:props='props.hero')
-  How(:props='props.how')
-  Technology(:props='props.technology')
-  Divider(:props='props.divider')
+.pages-invisalign
+  Loader(v-if='loading && !props')
+  div(v-if='props')
+    Hero(:props='props.hero')
+    How(:props='props.how')
+    Technology(:props='props.technology')
+    Divider(:props='props.divider')
     
