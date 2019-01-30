@@ -1,0 +1,176 @@
+.form
+  @include desktop-lg
+    max-width: 720px
+  margin: rem-calc(71) auto 4rem
+  width: 100%
+  max-width: 600px
+  height: 100%
+
+  &__group
+    position: relative
+    padding-bottom: 1.8rem
+
+    &--radio
+      display: flex
+      align-items: center
+
+      p
+        margin-right: 1rem
+        padding-left: rem-calc(10)
+        color: $green-grey
+
+    &--select
+      max-width: rem-calc(290)
+
+    &--button
+      display: flex
+      position: relative
+      justify-content: center
+
+  &__input
+    border-bottom: 2px solid $cloudy
+    padding: 0 1rem
+    width: 100%
+    height: rem-calc(50)
+    line-height: 40px
+
+    &:focus
+      outline: none
+
+    &--error
+      border-color: $danger
+
+    &--radio
+      position: absolute
+      opacity: 0
+      z-index: 1
+      cursor: pointer
+      width: rem-calc(28)
+      height: rem-calc(28)
+
+      &:checked ~ .form__radio-overlay
+        background: $cloudy
+
+      &:hover ~ .form__radio-overlay
+        background: $ice
+
+    &--select
+      border: 2px solid $cloudy
+      border-radius: 0
+      background-color: transparent
+      padding-left: rem-calc(10)
+      width: 100%
+      height: rem-calc(50)
+      line-height: 40px
+      appearance: none
+
+      &:focus
+        outline: none
+
+  &__label
+    position: absolute
+    top: 40%
+    transform: translateY(-50%)
+    transition: all .3s cubic-bezier(.165, .84, .44, 1)
+    padding-left: rem-calc(10)
+    color: $green-grey
+    transform-origin: left
+
+    &--active
+      top: 0
+      transform: translateY(-50%) scale(.75)
+      color: $hero-black
+
+    &--radio
+      margin-right: rem-calc(10)
+      margin-left: rem-calc(38)
+
+  &__radio-group
+    display: flex
+    position: relative
+    align-items: center
+    height: 30px
+
+  &__radio-overlay
+    position: absolute
+    top: 0
+    transition: background .2s ease-in-out
+    border: 2px solid $cloudy
+    width: rem-calc(30)
+    height: rem-calc(30)
+
+  &__arrow
+    position: absolute
+    top: 20%
+    right: 1rem
+    transform: rotate(90deg)
+    z-index: -1
+    width: 22px
+    height: 22px
+    fill: $cloudy
+    pointer-events: none
+
+  &__submit-button
+    @extend .button--main
+    cursor: pointer
+    padding: rem-calc(8) 0
+    max-width: rem-calc(110)
+
+    &:after
+      width: 103.5%
+
+  &__send-modal
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 99999
+    background: rgba($black, .35)
+    width: 100%
+    height: 100%
+    overflow: hidden
+
+  &__send-modal-container
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 9
+    box-shadow: $shadow
+    background: $ice
+    padding: rem-calc(71) 2rem
+    width: 50%
+    max-width: rem-calc(420)
+
+  &__close
+    position: absolute
+    top: 2rem
+    left: 2rem
+
+  &__thank-you
+    color: $green-grey
+    font-family: $roboto
+    font-size: 24px
+
+  &__sending
+    @extend h1
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    color: $green-grey
+
+    span
+      animation: ellipsis .8s ease-in-out infinite
+      opacity: 0
+
+      @for $i from 1 through 3
+        &:nth-child(#{$i})
+          animation-delay: (($i - 1) * .1s)
+
+      @keyframes ellipsis
+        0%
+          opacity: 0
+        50%
+          opacity: 0
+        100%
+          opacity: 1

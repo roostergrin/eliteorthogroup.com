@@ -1,27 +1,56 @@
 .form
-  .form__thank-you(v-if='formSuccess')
-  form.form__form(@submit.prevent='validate', method='post', v-if='!formSuccess')
+  form.form__form(@submit.prevent='validate' method='post' ref='form')
     
     .form__group
-      input.form__input(name='name', v-model='fullname', v-validate="'required|alpha_spaces'", :class="{ 'form__input--error': errors.has('name') }", type='text', placeholder='First and Last Name')
-      .form__message
-          span(v-show="errors.has('name')") Your name is required.
+      span.form__label(:class="{ 'form__label--active': firstName !== '' || active === 'firstName' }" @click='focused("firstName")') First Name #[span.danger *]
+      input.form__input(name='firstName' v-model='firstName' v-validate="'required|alpha'", :class="{ 'form__input--error': errors.has('firstName') && !formSuccess }" type='text' @focus='focused("firstName")')
+        
+    .form__group
+      span.form__label(:class="{ 'form__label--active': lastName !== '' || active === 'lastName' }" @click='focused("lastName")') Last Name #[span.danger *]
+      input.form__input(name='lastName' v-model='lastName' v-validate="'required|alpha'", :class="{ 'form__input--error': errors.has('lastName') && !formSuccess }" type='text' @focus='focused("lastName")')
+            
+    .form__group
+      span.form__label(:class="{ 'form__label--active': email !== '' || active === 'email' }" @click='focused("email")') Email Address #[span.danger *]
+      input.form__input(name='email' v-model='email' v-validate="'required|email'", :class="{ 'input': true, 'form__input--error': errors.has('email') && !formSuccess }" @focus='focused("email")')
     
     .form__group
-      input.form__input(name='email', v-model='email', v-validate="'required|email'", :class="{ 'input': true, 'form__input--error': errors.has('email') }", placeholder='Email')
-      .form__message
-        span(v-show="errors.has('email')") Please Input a Valid Email
-    
+      span.form__label(:class="{ 'form__label--active': phone !== '' || active === 'phone' }" @click='focused("phone")') Phone Number #[span.danger *]
+      input.form__input(name='phone', v-model='phone', v-validate="'required|numeric'", :class="{ 'input': true, 'form__input--error': errors.has('phone') && !formSuccess }" @focus='focused("phone")')
+        
+    .form__group.form__group--radio
+      p First Time Patient?
+      .form__radio-group
+        input.form__input--radio(name='newPatient' v-model='newPatient' value='Yes' type='radio')
+        span.form__radio-overlay
+        label.form__label--radio Yes
+        
+      .form__radio-group
+        input.form__input--radio(name='newPatient' v-model='newPatient' value='No' type='radio')
+        span.form__radio-overlay
+        label.form__label--radio No
+        
+    .form__group.form__group--select
+      select.form__input--select(name='location' v-model='location')      
+        option(value='' disabled hidden) Select Location
+        option(value='Bowie') Bowie
+        option(value='Smile HQ') Smile HQ (DC)
+      Icon.form__arrow(name='arrow')    
+            
     .form__group
-      input.form__input(name='phone', v-model='phone', v-validate="'required|numeric'", :class="{ 'input': true, 'form__input--error': errors.has('phone') }", placeholder='Phone Number')
-      .form__message
-        span(v-show="errors.has('phone')") Please Input a Valid Phone Number
+      span.form__label(:class="{ 'form__label--active': message !== '' || active === 'message' }" @click='focused("message")') Message
+      input.form__input(name='message' v-model='message' type='text' @focus='focused("message")')
     
-    .form__group
-      textarea.form__input.form__input--textarea(name='message', v-model='message' placeholder='Message')
-    
-    .form__button-group
+    .form__group--button
       button.form__submit-button(@click='validate', type='submit', :disabled='formSubmitted')
-        span Send
-      .form__spinner(v-if='formSubmitted')
-        span Sending ...  
+        span Submit
+      
+  transition(name='fade')
+    .form__send-modal(v-if='formSubmitted')
+      .form__send-modal-container
+        .form__close(@click='handleClose' v-if='formSuccess && formSubmitted') Close
+        .form__sending(v-if='!formSuccess && formSubmitted') Sending
+          span .
+          span .
+          span .
+        .form__thank-you(v-if='formSuccess && formSubmitted')
+          p We appreciate you reaching out. We'll get back to you soon.   
