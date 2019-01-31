@@ -5,9 +5,15 @@
     @extend .container
     flex-direction: column
 
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+      display: block
+
   &__title
     @extend .hero
     margin: 0 auto 3rem
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+      text-align: center
 
   &__content
     @include desktop-lg
