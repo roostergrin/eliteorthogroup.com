@@ -5,5 +5,5 @@
     .custom-about-doctor__col--left
       .custom-about-doctor__bio(v-html='props.bio')
     .custom-about-doctor__col--right
-      .custom-about-doctor__image-container
+      .custom-about-doctor__image-container(v-waypoint='{ active: true, callback: onImageScroll, options: options }', :class="{ 'custom-about-doctor__image-container--active': imageActive }")
         LazyImage.custom-about-doctor__image(:src='props.image')    

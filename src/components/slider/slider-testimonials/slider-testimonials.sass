@@ -9,6 +9,11 @@
   &__container
     @extend .container
     flex-direction: column
+    transition: opacity 1s ease-in-out
+    opacity: 0
+
+    .slider-testimonials--active &
+      opacity: 1
 
   &__image
     @include tablet

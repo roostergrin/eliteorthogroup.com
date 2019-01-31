@@ -15,10 +15,17 @@
   &__text
     @include tablet
       margin: 0 auto 2rem
+    transform: translateX(-3rem)
+    transition: opacity 1s ease-in-out, transform 1s cubic-bezier(.39, .575, .28, .995)
+    opacity: 0
     margin: 0 auto rem-calc(90)
     padding: 0 2rem
     width: 100%
     max-width: 784px
+
+    .custom-invisalign-how--active &
+      transform: translateX(0)
+      opacity: 1
 
   &__container
     @extend .container
@@ -51,7 +58,17 @@
   &__content
     @include phone
       padding: 0 2rem
+    transform: translateX(-3rem)
+    transition: opacity 1s ease-in-out, transform 1s cubic-bezier(.39, .575, .28, .995)
+    opacity: 0
     margin-bottom: 2rem
+
+    .custom-invisalign-how__container--active &
+      transform: translateX(0)
+      opacity: 1
+
+    &:last-child
+      transition-delay: .3s
 
     &-header
       @extend h3
@@ -85,14 +102,13 @@
       height: 100%
       content: ''
 
-    .custom-invisalign-how--active &
+    .custom-invisalign-how__container--active &
       &:before
         animation: slide-in 1s cubic-bezier(.39, .575, .28, .995) forwards
 
   &__image
-    transition: transform .65s cubic-bezier(.39, .575, .28, .995)
     visibility: hidden
 
-    .custom-invisalign-how--active &
+    .custom-invisalign-how__container--active &
       animation: visible 1s cubic-bezier(.39, .575, .28, .995) forwards
       animation-delay: .3s

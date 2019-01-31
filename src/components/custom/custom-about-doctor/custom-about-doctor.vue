@@ -6,14 +6,22 @@ import { onScroll } from 'resources/mixins'
 export default {
   data () {
     return {
+      imageActive: false,
       options: {
         root: null,
         rootMargin: '0px',
-        threshold: [0.5]
+        threshold: [0.25]
       }
     }
   },
   props: ['props'],
-  mixins: [onScroll]
+  mixins: [onScroll],
+  methods: {
+    onImageScroll ({going}) {
+      if (going === 'in') {
+        this.imageActive = true
+      }
+    }
+  }
 }
 </script>
