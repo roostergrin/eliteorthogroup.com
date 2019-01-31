@@ -2,5 +2,5 @@
   .custom-home-instagram__container
     .custom-home-instagram__thumb.custom-home-instagram__thumb--title
       .custom-home-instagram__title Follow Us on Instagram
-    a.custom-home-instagram__thumb(v-for='post, i in props', :key='i', :href='post.link')
+    a.custom-home-instagram__thumb(v-for='post, i in props', :key='i', :href='post.link' v-if='i <= 4')
       img.custom-home-instagram__img(:src='post.image')

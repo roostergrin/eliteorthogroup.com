@@ -6,6 +6,7 @@ import { onScroll } from 'resources/mixins'
 export default {
   data () {
     return {
+      feed: [],
       options: {
         root: null,
         rootMargin: '0px',
@@ -16,7 +17,7 @@ export default {
   mixins: [onScroll],
   computed: {
     props () {
-      return this.$store.state.insta.slice(0, 5)
+      return this.$store.state.insta
     }
   }
 }

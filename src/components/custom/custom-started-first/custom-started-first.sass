@@ -88,6 +88,14 @@
     display: flex
     padding: 0
 
+    &:nth-child(2)
+      .custom-started-first__item
+        transition-delay: .25s
+
+    &:last-child
+      .custom-started-first__item
+        transition-delay: .55s
+
     @media screen and (max-width: $width)
       flex-basis: 100%
       margin-left: 0
@@ -101,14 +109,14 @@
   &__item
     @include phone
       margin-bottom: 1rem
-    // transform: translateX(-3rem)
-    // transition: opacity 1s ease-in-out, transform 1s cubic-bezier(.39, .575, .28, .995)
-    // opacity: 0
+    transform: translateX(-3rem)
+    transition: opacity 1s ease-in-out, transform 1s cubic-bezier(.39, .575, .28, .995)
+    opacity: 0
     margin-bottom: 2rem
 
-    // .custom-started-first__container--active &
-    //   transform: translateX(0)
-    //   opacity: 1
+    .custom-started-first__container--active &
+      transform: translateX(0)
+      opacity: 1
 
     &-body
       @include phone
