@@ -16,7 +16,7 @@ export default {
         lazy: true,
         loop: true,
         autoplay: {
-          delay: 5000
+          delay: 3000
         },
         centeredSlides: true,
         spaceBetween: 0,
