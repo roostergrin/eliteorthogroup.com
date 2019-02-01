@@ -42,16 +42,19 @@
 
   &__lower
     @include desktop-lg
-      height: rem-calc(520)
+      height: rem-calc(500)
     @include phone
       height: rem-calc(200)
     position: relative
     width: 100%
-    height: rem-calc(410)
+    height: rem-calc(400)
     overflow: hidden
 
   &__image
+    @include desktop-lg
+      height: rem-calc(540)
     @extend .img-norm
+    height: rem-calc(420)
 
   &__link
     @extend .link-main

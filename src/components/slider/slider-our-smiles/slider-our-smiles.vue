@@ -33,7 +33,7 @@ export default {
         },
         pagination: {
           el: '.slider-our-smiles__pagination',
-          cliackable: true,
+          clickable: true,
           bulletClass: 'slider-our-smiles__bullet',
           bulletActiveClass: 'slider-our-smiles__bullet--active'
         }

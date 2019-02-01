@@ -49,6 +49,7 @@
       left: -2rem
     @include phone
       left: 0
+      opacity: .3
     position: absolute
     top: -1.5rem
     left: 0
@@ -97,6 +98,15 @@
       opacity: 1
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
 
+  &__lower-overlay
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 2
+    background: rgba($black, .2)
+    width: 100%
+    height: 100%
+
   &__text,
   &__schedule-text
     @extend h3
@@ -131,7 +141,7 @@
     position: absolute
     bottom: rem-calc(60)
     left: 2rem
-    z-index: 2
+    z-index: 3
     max-width: rem-calc(240)
     text-shadow: $text-shadow
     color: $white

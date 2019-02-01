@@ -21,4 +21,5 @@
           
       .custom-about-team__image-container(v-waypoint='{ active: true, callback: onImageScroll, options: options }')
         .custom-about-team__lower-text(v-html='props.schedule_text')
+        .custom-about-team__lower-overlay  
         LazyImage.custom-about-team__image(:src='props.image_lower_right')      

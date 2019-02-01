@@ -139,8 +139,8 @@
   &__lower
     @include desktop-lg
       height: 80vh
-    @include ipad-pro
-      height: 52vh
+    // @include ipad-pro
+    //   height: 52vh
     @include tablet
       flex-direction: column
       height: 100%
@@ -149,6 +149,12 @@
     // don't do this
     height: 95vh
     overflow: hidden
+
+    @media screen and (min-height: 900px) and (max-width: 1500px)
+      height: 62vh
+
+    @media screen and (min-height: 1366px) and (max-width: #{$screen-md})
+      height: 52vh
 
   &__pepper
     @include desktop-lg

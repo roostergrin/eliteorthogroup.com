@@ -100,9 +100,11 @@
     .pages-invisalign &
       @include ipad-pro
         top: 42%
+      @include phone
+        top: 45%  
 
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
-      display: block    
+      display: block
 
   &__title
     @extend .hero
@@ -128,12 +130,8 @@
         display: block
         margin: 0 auto
         text-shadow: $text-shadow
-        color: $teal
-      display: none
-
-      .pages-about-us &,
-      .pages-invisalign &
         color: $white
+      display: none
 
   &__appt-btn
     @extend .button--main

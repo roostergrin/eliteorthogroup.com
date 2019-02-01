@@ -6,7 +6,7 @@ nav.navigation(v-if='props')
       .navigation__item(@click='handleClick("loc")', ref='location', :class="{ 'navigation__item--mobile-hide': $store.state.menu}")
         Icon.navigation__icon(name='location')
         .navigation__dropdown.navigation__dropdown--location
-          a.navigation__link(v-for='location, j in props.location', :key='j', :href='location.link' target='_blank' v-html='location.city')
+          a.navigation__link(v-for='location, j in props.location', :key='j', :href='location.link' target='_blank' v-html='location.city' v-on:click.stop='closeDropdown')
           
       .navigation__item(@click='handleClick("phone")', ref='phone', :class="{ 'navigation__item--mobile-hide': $store.state.menu}")
         Icon.navigation__icon(name='phone')
