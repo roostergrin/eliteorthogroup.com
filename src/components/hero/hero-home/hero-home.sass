@@ -3,6 +3,8 @@
     height: 85vh
   @include tablet
     height: 85vh
+  @include phone
+    height: 100vh
   position: relative
   width: 100vw
   height: 100vh
@@ -43,7 +45,9 @@
       @include tablet
         background-position: 78%
       @include phone
-        background-position: 71%
+        background-position: 72%
+      @media screen and (max-width: 375px)
+        background-position: 70%
 
     &:last-child
       @media screen and (max-width: 1290px)
