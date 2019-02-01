@@ -47,10 +47,14 @@
   transition(name='fade')
     .form__send-modal(v-if='formSubmitted')
       .form__send-modal-container
-        .form__close(@click='handleClose' v-if='formSuccess && formSubmitted') Close
+        .form__close(@click='handleClose' v-if='formSuccess && formSubmitted')
+          span
+          span
         .form__sending(v-if='!formSuccess && formSubmitted') Sending
           span .
           span .
           span .
         .form__thank-you(v-if='formSuccess && formSubmitted')
-          p We appreciate you reaching out. We'll get back to you soon.   
+          Icon.form__thank-you-logo(name='logo')
+          p.form__highlight We appreciate you reaching out. 
+          p We'll get back to you soon.   

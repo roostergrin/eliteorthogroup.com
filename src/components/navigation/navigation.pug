@@ -1,4 +1,4 @@
-nav.navigation(v-if='props')
+nav.navigation(v-if='props', :class="{ 'navigation--scrolling': $store.state.nav}")
   .navigation__container
     router-link.navigation__logo(to="/", :class="{ 'navigation__logo--hide': $route.path === '/' && !$store.state.menu && !$store.state.nav, 'navigation__logo--menu': $store.state.menu, 'navigation__logo--scrolling': $store.state.nav }" v-on:click.native='closeMenu')
       Icon.navigation__logo-icon(name='logo', :class="{ 'navigation__logo-icon--white': $route.path === '/get-started' && !$store.state.menu && !$store.state.nav || $route.path === '/about-us' && width <= 768 && !$store.state.nav && !$store.state.menu }")

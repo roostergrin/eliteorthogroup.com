@@ -139,15 +139,62 @@
     background: $ice
     padding: rem-calc(71) 2rem
     width: 50%
-    max-width: rem-calc(420)
+    max-width: rem-calc(450)
 
   &__close
     position: absolute
-    top: 2rem
-    left: 2rem
+    top: 0
+    right: -3rem
+    cursor: pointer
+    width: rem-calc(22)
+    height: rem-calc(22)
+
+    span
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      transition: background .2s ease
+      background: $white
+      width: rem-calc(22)
+      height: 3px
+
+      &:first-child
+        transform: rotate(45deg)
+
+      &:last-child
+        transform: rotate(-45deg)
+
+    &:hover
+      span
+        background: $teal
 
   &__thank-you
+    // position: relative
+    text-align: center
     color: $green-grey
+    // font-family: $roboto
+    // font-size: 24px
+
+    &-logo
+      position: absolute
+      top: 2.5rem
+      left: 1rem
+      z-index: -1
+      width: rem-calc(142)
+      height: rem-calc(129)
+
+      .dark-grey,
+      .grey
+        fill: none
+
+      .teal
+        opacity: .25
+        fill: $dark-grey
+
+  &__highlight
+    margin-bottom: rem-calc(10)
+    color: $teal
     font-family: $roboto
     font-size: 24px
 
