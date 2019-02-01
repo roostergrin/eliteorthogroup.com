@@ -76,14 +76,21 @@
       height: 100%
       content: ''
 
-    &--active
+    .custom-about-doctor__container--active &
       &:before
         animation: slide-in 1s cubic-bezier(.39, .575, .28, .995) forwards
+
+  &__bio
+    transition: opacity .65s ease-in-out
+    opacity: 0
+
+    .custom-about-doctor__container--active &
+      opacity: 1
 
   &__image
     transition: transform .65s cubic-bezier(.39, .575, .28, .995)
     visibility: hidden
 
-    .custom-about-doctor__image-container--active &
+    .custom-about-doctor__container--active &
       animation: visible 1s cubic-bezier(.39, .575, .28, .995) forwards
       animation-delay: .3s
