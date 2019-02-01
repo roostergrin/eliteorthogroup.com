@@ -1,11 +1,12 @@
-const route = '//eliteorthogroup.roostertest3.com/wp-json'
+const route = 'https://eliteorthogroup.roostertest3.com/wp-json'
 
 const api = () => {
-  try {
-    return (document.location.protocol === 'https:' ? 'https:' : 'http:') + route
-  } catch (e) {
-    return 'https://' + route
-  }
+  return route
+  // try {
+  //   return (document.location.protocol === 'https:' ? 'https:' : 'http:') + route
+  // } catch (e) {
+  //   return 'https://' + route
+  // }
 }
 
 export default api()
