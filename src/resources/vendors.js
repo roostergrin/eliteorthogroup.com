@@ -12,7 +12,7 @@ const vendors = () => {
   Vue.use(VeeValidate)
   Vue.use(VueAwesomeSwiper /*, { default global options } */)
   Vue.use(VueWaypoint)
-  Vue.use(VueParallaxJs, { minWidth: 1024 })
+  Vue.use(VueParallaxJs, { minWidth: 768 })
   Vue.use(VueScrollTo, {
     container: 'body',
     duration: 1500,

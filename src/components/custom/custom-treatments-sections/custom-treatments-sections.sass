@@ -6,7 +6,7 @@
         @include ipad-pro
           padding: rem-calc(50) 0
         @include tablet
-          padding: 2rem 0
+          padding: 2rem
         background: $ice
 
       .custom-treatments-sections__content-header
@@ -53,6 +53,8 @@
   &__image
     @include desktop-lg
       height: rem-calc(540)
+    @include tablet
+      height: 100%
     @extend .img-norm
     height: rem-calc(420)
 
