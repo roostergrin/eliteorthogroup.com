@@ -45,9 +45,9 @@
       @include tablet
         background-position: 78%
       @include phone
-        background-position: 70%
-      @media screen and (max-width: 414px) and (max-height: 750px)
         background-position: 72%
+      @media screen and (max-width: 414px) and (min-height: 750px)
+        background-position: 70%
 
     &:last-child
       @media screen and (max-width: 1290px)
