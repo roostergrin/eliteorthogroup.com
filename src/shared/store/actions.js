@@ -68,7 +68,7 @@ const actions = {
           if (err) {
             console.log(err.message)
           } else {
-            console.log(res.data)
+            // console.log(res.data)
             const data = res.data.reduce((allData, data) => {
               let newData = { image: data.images.standard_resolution.url, text: data.caption.text, video: data.videos, link: data.link }
               allData.push(newData)
@@ -76,7 +76,7 @@ const actions = {
             }, [])
             commit(GET_INSTAGRAM, data)
           }
-        })
+        })``
       } catch (e) { console.log('INSTA API: ' + e) }
     })()
   },
