@@ -1,5 +1,6 @@
 import axios from 'axios'
 import api from 'api'
+import jsonp from 'jsonp'
 import {
   GET_PAGES,
   // GET_BLOG,
@@ -63,14 +64,19 @@ const actions = {
   GET_INSTAGRAM ({ commit }) {
     (async () => {
       try {
-        const response = await axios.get('https://api.instagram.com/v1/users/335807461/media/recent?access_token=335807461.aea5151.e67a2b8c7aec4d6e8963a67bca2eec68')
-        const data = response.data.data.reduce((allData, data) => {
-          let newData = { image: data.images.standard_resolution.url, text: data.caption.text, video: data.videos, link: data.link }
-          allData.push(newData)
-          return allData
-        }, [])
-        commit(GET_INSTAGRAM, data)
-        // console.log(data)
+        jsonp('https://api.instagram.com/v1/users/335807461/media/recent?access_token=335807461.aea5151.e67a2b8c7aec4d6e8963a67bca2eec68', null, (err, res) => {
+          if (err) {
+            console.log(err.message)
+          } else {
+            console.log(res.data)
+            const data = res.data.reduce((allData, data) => {
+              let newData = { image: data.images.standard_resolution.url, text: data.caption.text, video: data.videos, link: data.link }
+              allData.push(newData)
+              return allData
+            }, [])
+            commit(GET_INSTAGRAM, data)
+          }
+        })
       } catch (e) { console.log('INSTA API: ' + e) }
     })()
   },
