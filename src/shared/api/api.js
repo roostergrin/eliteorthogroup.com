@@ -1,4 +1,4 @@
-const route = 'https://eliteorthogroup.roostertest3.com/wp-json'
+const route = 'https://eliteorthogroup.com/wp-json'
 
 const api = () => {
   return route
