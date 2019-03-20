@@ -19,7 +19,7 @@ function rg_serve_route () {
   $subject = 'Elite Ortho Group Contact Form';
   $headers = array('Content-Type: text/html; charset=UTF-8');
   $message = '<html><body>';
-  $message .= '<p><h4><strong>Form Submission by: </strong></h4>' . $data['firstName'] . '' . $data['lastName'] . '</p>';
+  $message .= '<p><h4><strong>Form Submission by: </strong></h4>' . $data['firstName'] . ' ' . $data['lastName'] . '</p>';
   $message .= '<p><h4><strong>Email: </strong></h4>' . $data['email'] . '</p>';
   $message .= '<p><h4><strong>Phone: </strong></h4>' . $data['phone'] . '</p>';
   $message .= '<p><h4><strong>First Time Patient?: </strong></h4>' . $data['newPatient'] . '</p>';
