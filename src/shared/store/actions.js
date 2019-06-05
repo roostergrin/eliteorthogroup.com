@@ -64,10 +64,11 @@ const actions = {
   GET_INSTAGRAM ({ commit }) {
     (async () => {
       try {
-        jsonp('https://api.instagram.com/v1/users/335807461/media/recent?access_token=335807461.aea5151.e67a2b8c7aec4d6e8963a67bca2eec68', null, (err, res) => {
+        jsonp('https://api.instagram.com/v1/users/335807461/media/recent?access_token=335807461.aea5151.07908d21e3a5483da6f7d880c97da357', null, (err, res) => {
           if (err) {
             console.log(err.message)
           } else {
+            console.log(res)
             const data = res.data.reduce((allData, data) => {
               let newData = { image: data.images.standard_resolution.url, text: data.caption.text, video: data.videos, link: data.link }
               allData.push(newData)
