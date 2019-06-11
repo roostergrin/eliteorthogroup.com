@@ -68,7 +68,6 @@ const actions = {
           if (err) {
             console.log(err.message)
           } else {
-            console.log(res)
             const data = res.data.reduce((allData, data) => {
               let newData = { image: data.images.standard_resolution.url, text: data.caption.text, video: data.videos, link: data.link }
               allData.push(newData)
