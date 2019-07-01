@@ -28,20 +28,25 @@
         input.form__input--radio(name='newPatient' v-model='newPatient' value='No' type='radio')
         span.form__radio-overlay
         label.form__label--radio No
+      
+    .form__group.form__group--radio
+      p Select Location
+      .form__radio-group
+        input.form__input--radio(name='location' v-model='location' value='Bowie' type='radio')
+        span.form__radio-overlay
+        label.form__label--radio Bowie
         
-    .form__group.form__group--select
-      select.form__input--select(name='location' v-model='location')      
-        option(value='' disabled hidden) Select Location
-        option(value='Bowie') Bowie
-        option(value='Smile HQ') Smile HQ (DC)
-      Icon.form__arrow(name='arrow')    
+      .form__radio-group
+        input.form__input--radio(name='location' v-model='location' value='Smile HQ (DC)' type='radio')
+        span.form__radio-overlay
+        label.form__label--radio Smile HQ (DC) 
             
     .form__group
       span.form__label(:class="{ 'form__label--active': message !== '' || active === 'message' }" @click='focused("message")') Message
       input.form__input(name='message' v-model='message' type='text' @focus='focused("message")')
     
     .form__group--button
-      button.form__submit-button(@click='validate', type='submit', :disabled='formSubmitted')
+      button.form__submit-button(type='submit', :disabled='formSubmitted')
         span Submit
       
   transition(name='fade')
