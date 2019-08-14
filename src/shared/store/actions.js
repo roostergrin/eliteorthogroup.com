@@ -64,7 +64,7 @@ const actions = {
   GET_INSTAGRAM ({ commit }) {
     (async () => {
       try {
-        jsonp('https://api.instagram.com/v1/users/335807461/media/recent?access_token=335807461.8fd4b68.a6f833fd32bc4d37af5327c2aa22fe00', null, (err, res) => {
+        jsonp('https://api.instagram.com/v1/users/335807461/media/recent?access_token=335807461.8fd4b68.28583fe3701b4a989e65e1d5f926664e', null, (err, res) => {
           if (err) {
             console.log(err.message)
           } else {
