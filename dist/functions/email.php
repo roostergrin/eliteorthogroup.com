@@ -22,7 +22,7 @@ function rg_serve_route () {
   $message .= '<p><h4><strong>Form Submission by: </strong></h4>' . $data['firstName'] . ' ' . $data['lastName'] . '</p>';
   $message .= '<p><h4><strong>Email: </strong></h4>' . $data['email'] . '</p>';
   $message .= '<p><h4><strong>Phone: </strong></h4>' . $data['phone'] . '</p>';
-  $message .= '<p><h4><strong>First Time Patient?: </strong></h4>' . $data['newPatient'] . '</p>';
+  $message .= '<p><h4><strong>First Time Patient?: </strong></h4>' . $data['firstTime'] . '</p>';
   $message .= '<p><h4><strong>Location: </strong></h4>' . $data['location'] . '</p>';
   $message .= '<p><h4><strong>Message:</strong></h4> ' . $data['message'] . '</p>';
   $message .= '</body></html>';

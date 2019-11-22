@@ -16,18 +16,16 @@
     .form__group
       span.form__label(:class="{ 'form__label--active': phone !== '' || active === 'phone' }" @click='focused("phone")') Phone Number #[span.danger *]
       input.form__input(name='phone', v-model='phone', v-validate="'required|numeric'", :class="{ 'input': true, 'form__input--error': errors.has('phone') && !formSuccess }" @focus='focused("phone")')
-        
+
     .form__group.form__group--radio
-      p First Time Patient?
-      .form__radio-group
-        input.form__input--radio(name='newPatient' v-model='newPatient' value='Yes' type='radio')
-        span.form__radio-overlay
-        label.form__label--radio Yes
-        
-      .form__radio-group
-        input.form__input--radio(name='newPatient' v-model='newPatient' value='No' type='radio')
-        span.form__radio-overlay
-        label.form__label--radio No
+        .form__radio-group
+          input.form__input--radio(
+            name='isFirstTime'
+            v-model='isFirstTime'
+            value='Yes'
+            type='checkbox')
+          span.form__radio-overlay
+          label.form__label--radio Yes, I am a first time patient    
       
     .form__group.form__group--radio
       p Select Location

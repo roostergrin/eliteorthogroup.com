@@ -10,6 +10,8 @@ export default {
       lastName: '',
       email: '',
       phone: '',
+      isFirstTime: false,
+      firstTimeMessage: 'No, I am not a first time patient',
       newPatient: '',
       location: '',
       message: '',
@@ -36,14 +38,20 @@ export default {
     },
     onSubmit () {
       this.formSubmitted = true
+      if (this.isFirstTime) {
+        this.firstTimeMessage = 'Yes, I am a first time patient'
+      }
+      else { this.firstTimeMessage = 'No, I am not a first time patient' }
       axios.post(this.postUrl, {
         firstName: this.firstName,
         lastName: this.lastName,
         email: this.email,
         phone: this.phone,
         newPatient: this.newPatient,
+        firstTime: this.firstTimeMessage,
         location: this.location,
         message: this.message
+
       })
         .then(res => {
           this.active = ''
