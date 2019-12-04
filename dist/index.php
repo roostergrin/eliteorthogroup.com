@@ -4,6 +4,21 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
+	    <!-- Global site tag (gtag.js) - Google Ads: 798900391 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-798900391"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-798900391');
+    </script>
+    <script>
+      gtag('config', 'AW-798900391/1dohCMeahbYBEKeB-fwC', {
+        'phone_conversion_number': '301.262.8500'
+      });
+    </script>
+	
 </head>
 <body>
   <div id='app' role='application'></div>
@@ -31,5 +46,34 @@
           a.appendChild(r);
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
+	
+ <?php   if ( is_page(10) ) { 
+?>
+
+	<!-- Event snippet for Form_Website conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-798900391/yw7BCPbw-rUBEKeB-fwC',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
+<?php } 
+else {
+
+}
+
+?>
+	
 </body>
 </html>
