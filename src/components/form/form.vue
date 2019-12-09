@@ -57,7 +57,9 @@ export default {
           this.active = ''
           this.clearForm()
           this.formSuccess = true
-          setTimeout(() => { this.form.reset() }, 50)
+          setTimeout(() => {
+            window.location.href = 'https://eliteorthogroup.com/thank-you/'
+          }, 50)
         })
         .catch(e => { console.log(e) })
     },

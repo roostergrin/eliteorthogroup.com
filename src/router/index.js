@@ -9,6 +9,7 @@ import GetStarted from '@/pages/get-started/get-started'
 import Home from '@/pages/home/home'
 import Invisalign from '@/pages/invisalign/invisalign'
 import Treatments from '@/pages/treatments/treatments'
+import ThankYou from '@/pages/thank-you/thank-you'
 
 // Resources
 import Styleguide from '@/pages/styleguide/styleguide'
@@ -60,6 +61,12 @@ const router = new VueRouter({
       name: 'Contact',
       navigation: true,
       component: Contact
+    },
+    {
+      path: '/thank-you',
+      name: 'thank-you',
+      navigation: false,
+      component: ThankYou
     },
     {
       path: '/styleguide',
