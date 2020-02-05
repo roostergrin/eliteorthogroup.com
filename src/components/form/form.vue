@@ -40,8 +40,7 @@ export default {
       this.formSubmitted = true
       if (this.isFirstTime) {
         this.firstTimeMessage = 'Yes, I am a first time patient'
-      }
-      else { this.firstTimeMessage = 'No, I am not a first time patient' }
+      } else { this.firstTimeMessage = 'No, I am not a first time patient' }
       axios.post(this.postUrl, {
         firstName: this.firstName,
         lastName: this.lastName,
