@@ -18,7 +18,7 @@
         'phone_conversion_number': '301.262.8500'
       });
     </script>
-	
+
 </head>
 <body>
   <div id='app' role='application'></div>
@@ -43,15 +43,34 @@ function gtag_report_conversion(url) {
 }
 </script>
 
+<!--- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '163867825031719');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1"
+src="https://www.facebook.com/tr?id=163867825031719&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
 
-<?php } 
+<?php }
 else {
 
 }
 
 ?>
-	
-	
+
+
   <script type="text/javascript">
     var $buoop = {notify:{e:-6,f:-4,o:-4,s:-2,c:-4},insecure:true,api:5};
 
@@ -75,8 +94,8 @@ else {
           a.appendChild(r);
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
-	
 
-	
+
+
 </body>
 </html>
