@@ -96,8 +96,9 @@ else {
   </script>
  
 <!-- ZocDoc -->
-<div> 
-    <a href=http://www.zocdoc.com/practice/elite-orthodontics-38681?lock=true&isNewPatient=true&referrerType=widget target="_top"><img src="//offsiteSchedule.zocdoc.com/images/remote/rb_BookAnAppt_White_214x74.png" style='border:0'>
+<div style="position: fixed; bottom: 1em; right: 1em;"> 
+  <a href=http://www.zocdoc.com/practice/elite-orthodontics-38681?lock=true&isNewPatient=true&referrerType=widget target="_target">
+    <img src="//offsiteSchedule.zocdoc.com/images/remote/rb_BookAnAppt_White_214x74.png" style='border:0'>
   </a> 
 </div>
 
