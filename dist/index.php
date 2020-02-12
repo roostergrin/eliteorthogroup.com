@@ -94,8 +94,12 @@ else {
           a.appendChild(r);
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
-
-
+ 
+<!-- ZocDoc -->
+<div> 
+    <a href=http://www.zocdoc.com/practice/elite-orthodontics-38681?lock=true&isNewPatient=true&referrerType=widget target="_top"><img src="//offsiteSchedule.zocdoc.com/images/remote/rb_BookAnAppt_White_214x74.png" style='border:0'>
+  </a> 
+</div>
 
 </body>
 </html>
