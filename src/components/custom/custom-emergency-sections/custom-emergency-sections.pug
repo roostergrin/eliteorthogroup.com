@@ -1,0 +1,5 @@
+.custom-emergency-sections(v-waypoint="{ active: true, callback: onScroll, options: options }", :class="{ 'custom-emergency-sections--active': active }")
+  .custom-emergency-sections__container
+    .custom-emergency-sections__section(v-for='(section, i) in props')
+      h3.custom-emergency-sections__heading(v-html='section.title')
+      .custom-emergency-sections__body(v-html='section.body')

@@ -1,0 +1,41 @@
+.custom-emergency-intro
+  @include tablet-lg
+    min-height: auto
+  position: relative
+  padding: 3rem 0
+  display: flex
+  align-items: center
+  min-height: 50vh
+
+  // &__background
+  //   @extend .image--bg
+
+  &__container
+    @extend .container
+
+  &__column
+    @extend .col-2--offset
+    @extend .col-8
+
+
+  &__title
+    @include title(custom-emergency-intro)
+    // color: $dark
+
+  &__body-container
+    @include tablet-lg
+      display: block
+    display: flex
+
+  &__image
+    @extend .col-6
+    background-position: center
+    background-size: contain
+    background-repeat: no-repeat
+    height: 150px
+    padding: 0
+    margin: 1rem 0
+
+  &__body
+    @extend .col-6
+    padding: 0

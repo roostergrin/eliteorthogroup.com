@@ -6,6 +6,7 @@ import AboutUs from '@/pages/about-us/about-us'
 import Braces from '@/pages/braces/braces'
 import Contact from '@/pages/contact/contact'
 import GetStarted from '@/pages/get-started/get-started'
+import Emergency from '@/pages/emergency/emergency'
 import Home from '@/pages/home/home'
 import Invisalign from '@/pages/invisalign/invisalign'
 import Treatments from '@/pages/treatments/treatments'
@@ -67,6 +68,12 @@ const router = new VueRouter({
       name: 'thank-you',
       navigation: false,
       component: ThankYou
+    },
+    {
+      path: '/emergency',
+      name: 'Emergencies',
+      navigation: true,
+      component: Emergency
     },
     {
       path: '/styleguide',
