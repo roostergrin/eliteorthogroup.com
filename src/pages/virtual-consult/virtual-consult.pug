@@ -1,0 +1,4 @@
+.pages-virtual-consult
+  Loader(v-if='loading && !props')
+  div(v-if='props')
+    CustomVirtualConsultSections(:props='props.virtual_consult_sections')
