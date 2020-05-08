@@ -101,6 +101,11 @@ else {
     <img src="//offsiteSchedule.zocdoc.com/images/remote/rb_BookAnAppt_White_214x74.png" style='border:0'>
   </a> 
 </div> -->
-
+<!-- ZocDoc -->
+<!-- SmileMate -->
+<?php if (is_page( array( 386 ) ) ) : ?>
+	<script src="https://us.smilemate.com/practice/resources/scan.js" practice-token="28ecd528-c9a0-4509-a955-2fed04214a69" async></script>
+<?php endif; ?>
+<!-- SmileMate -->
 </body>
 </html>
