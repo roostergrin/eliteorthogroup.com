@@ -29,6 +29,14 @@
       justify-content: space-between
       margin-top: 2rem
 
+  &__social-link
+    &:last-child
+      path
+        transition: all 0.2s ease
+      &:hover
+        path
+          fill: $teal
+
   &__social-icon
     @include phone
       padding: rem-calc(16)

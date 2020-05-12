@@ -114,7 +114,14 @@
     &:hover
       border-color: $teal
       fill: $teal
+    
+    &:last-child
+      path
+        transition: all 0.2s ease
+      &:hover
+        path
+          fill: $teal
 
   &__social-icon
     width: 100%
-    height: 100%    
+    height: 100%   
