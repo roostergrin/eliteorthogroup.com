@@ -13,11 +13,15 @@ export default {
       }
     }
   },
-  props: {
-    props: {
-      type: [Object, Array]
-    }
-  },
-  mixins: [onScroll]
+  props: ['props'],
+  // props: {
+  //   props: {
+  //     type: [Object, Array]
+  //   }
+  // },
+  mixins: [onScroll],
+  mounted () {
+    console.log(this.props)
+  }
 }
 </script>

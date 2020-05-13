@@ -1,0 +1,10 @@
+.hero-virtual
+  .hero-home__waypoint(v-waypoint='{ active: true, callback: navTrigger}')
+  .hero-virtual__bg(:style="{ backgroundImage: 'url(' + props.image + ')' }")
+  .hero-virtual__overlay(:class="{ 'hero-virtual__overlay--open': active }")
+  .hero-virtual__container
+    .hero-virtual__title
+      span(v-for='letter, i in props.title', :key='i', v-html='letter', :style="{ animationDelay: (i + 20)* .035 + 's'}")
+    .hero-virtual__title.hero-virtual__title--mobile
+      span(v-for='letter, j in props.title_mobile', :key='j', v-html='letter', :style="{ animationDelay: (j + 35)* .025 + 's'}")
+    //- router-link.hero-virtual__appt-btn(to='/contact') Schedule Consult.  

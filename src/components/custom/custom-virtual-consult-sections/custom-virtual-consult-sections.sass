@@ -24,13 +24,22 @@
   &__heading
     margin-top: 150px
 
+  &__body
+    display: flex
+
+  &__left-half
+    width: 50%
+
+  &__right-half
+    width: 50%
+
 #sm-scan-iframe
-  margin-top: -300px
+  // margin-top: -300px
+  // @include tablet-lg
+  //   margin-top: -150px
+  // @media screen and (max-width: 576px)
+  //   margin-top: -135px
   border: none
-  @include tablet-lg
-    margin-top: -150px
-  @media screen and (max-width: 576px)
-    margin-top: -135px
 
 .pages-virtual-consult + .footer
   display: none

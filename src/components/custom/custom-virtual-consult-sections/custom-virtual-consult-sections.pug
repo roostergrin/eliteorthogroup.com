@@ -1,5 +1,7 @@
 .custom-virtual-consult-sections(v-waypoint="{ active: true, callback: onScroll, options: options }", :class="{ 'custom-virtual-consult-sections--active': active }")
   .custom-virtual-consult-sections__container
     .custom-virtual-consult-sections__section(v-for='(section, i) in props')
-      h3.custom-virtual-consult-sections__heading(v-html='section.title')
-      .custom-virtual-consult-sections__body(v-html='section.body')
+      //- h3.custom-virtual-consult-sections__heading(v-html='section.title')
+      //- .custom-virtual-consult-sections__body(v-html='section.body')
+      .custom-virtual-consult-sections__body(v-html='section.content')
+      
