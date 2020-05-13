@@ -14,14 +14,6 @@ export default {
     }
   },
   props: ['props'],
-  // props: {
-  //   props: {
-  //     type: [Object, Array]
-  //   }
-  // },
-  mixins: [onScroll],
-  mounted () {
-    console.log(this.props)
-  }
+  mixins: [onScroll]
 }
 </script>
