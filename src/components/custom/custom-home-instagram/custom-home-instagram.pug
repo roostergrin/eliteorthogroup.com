@@ -1,6 +1,5 @@
-.custom-home-instagram(v-waypoint="{ active: true, callback: onScroll, options: options }", :class="{ 'custom-home-instagram--active': active }")
-  .custom-home-instagram__container
-    .custom-home-instagram__thumb.custom-home-instagram__thumb--title
-      .custom-home-instagram__title Follow Us on Instagram
-    a.custom-home-instagram__thumb(v-for='post, i in props', :key='i', :href='post.link' v-if='i <= 4')
-      img.custom-home-instagram__img(:src='post.image')
+.custom-home-instagram(v-if='instagram' v-waypoint="{ active: true, callback: onScroll, options: options }", :class="{ 'custom-home-instagram--active': active }")
+  .custom-home-instagram__title(v-html='props.title') 
+  .custom-home-instagram__container 
+    a.custom-home-instagram__thumb(v-for='image, i in instagram.data', :key='i', :href='image.permalink' target='_blank' rel='noopener noreferrer')
+      img.custom-home-instagram__image(:src='image.source')
