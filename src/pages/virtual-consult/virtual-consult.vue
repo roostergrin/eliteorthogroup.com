@@ -20,16 +20,16 @@ export default {
       // so that it will reload the next time this page is visited.
       localStorage.removeItem('reloaded')
       // move iframe inside left div
-      let iframeInterval = setInterval(myTimer, 1000);
-      function myTimer() {
+      let iframeInterval = setInterval(myTimer, 1000)
+      function myTimer () {
         let smIframe = document.getElementById('sm-scan-iframe')
         let leftHalf = document.querySelector('.custom-virtual-consult-sections__left-half')
         if (!!smIframe && !!leftHalf) {
           leftHalf.appendChild(smIframe)
-          myStopFunction();
+          myStopFunction()
         }
       }
-      function myStopFunction() {
+      function myStopFunction () {
         clearInterval(iframeInterval)
       }
     } else {

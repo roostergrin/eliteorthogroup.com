@@ -25,14 +25,25 @@
     margin-top: 150px
 
   &__body
+    @include tablet
+      flex-direction: column-reverse
     display: flex
+    flex-direction: row
     justify-content: space-around
 
   &__left-half
+    @include tablet
+      width: 100%
     width: 50%
 
   &__right-half
+    @include tablet
+      width: 100%
     width: 40%
+
+    iframe
+      @include tablet
+        width: 100%
 
 #sm-scan-iframe
   // margin-top: -300px
