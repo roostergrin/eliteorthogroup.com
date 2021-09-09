@@ -3,3 +3,5 @@
   div(v-if='props')
     Hero(:props='props.hero')
     CustomVirtualConsultSections(:props='props.virtual_consult_sections')
+    .pages-virtual-consultation__container
+      iframe#sm-scan-iframe(src='https://us.smilemate.com/practice/28ecd528-c9a0-4509-a955-2fed04214a69/scan' style='width: 100%;height: 867px;')
