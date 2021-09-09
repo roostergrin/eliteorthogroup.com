@@ -14,13 +14,6 @@ export default {
     Hero,
     CustomVirtualConsultSections
   },
-    created () {
-    let smileSnap = document.createElement('script')
-    smileSnap.setAttribute('src', 'https://us.smilemate.com/practice/resources/embed-flow.js')
-    smileSnap.setAttribute('practice-token', '28ecd528-c9a0-4509-a955-2fed04214a69')
-    smileSnap.setAttribute('flow-type', 'virtual-consultation')
-    document.body.appendChild(smileSnap)
-  },
   mounted () {
     if (localStorage.getItem('reloaded')) {
       // The page was just reloaded. Clear the value from local storage
